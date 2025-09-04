@@ -9,7 +9,7 @@ export const Projects = () => {
       tech: ["React", "Node.js", "MongoDB"],
       github: "https://github.com/yourname/expense-manager",
       demo: "https://expense-manager-demo.com",
-      image: "https://source.unsplash.com/600x400/?finance,app", // replace with your screenshot
+      image: "https://images.unsplash.com/photo-1605902711622-cfb43c4437b5?auto=format&fit=crop&w=1200&q=80", // replace with your screenshot
     },
     {
       title: "SkillHub",
@@ -17,7 +17,7 @@ export const Projects = () => {
       tech: ["React", "Express", "PostgreSQL"],
       github: "https://github.com/yourname/skillhub",
       demo: "https://skillhub-demo.com",
-      image: "https://source.unsplash.com/600x400/?education,app", // replace with your screenshot
+      image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80", // replace with your screenshot
     },
   ];
 
