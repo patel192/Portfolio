@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
-import { Github, ExternalLink } from "lucide-react";
-
+import { TiltCard } from "./TiltCard";
 export const Projects = () => {
   const projects = [
     {
@@ -9,7 +8,8 @@ export const Projects = () => {
       tech: ["React", "Node.js", "MongoDB"],
       github: "https://github.com/yourname/expense-manager",
       demo: "https://expense-manager-demo.com",
-      image: "https://images.unsplash.com/photo-1605902711622-cfb43c4437b5?auto=format&fit=crop&w=1200&q=80", // replace with your screenshot
+      image:
+        "https://images.unsplash.com/photo-1605902711622-cfb43c4437b5?auto=format&fit=crop&w=1200&q=80",
     },
     {
       title: "SkillHub",
@@ -17,16 +17,16 @@ export const Projects = () => {
       tech: ["React", "Express", "PostgreSQL"],
       github: "https://github.com/yourname/skillhub",
       demo: "https://skillhub-demo.com",
-      image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80", // replace with your screenshot
+      image:
+        "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80",
     },
   ];
-
   return (
     <section
       id="projects"
-      className="min-h-screen flex flex-col justify-center items-center px-6 py-16 bg-gradient-to-b from-gray-900 via-black to-gray-950 text-white"
+      className="min-h-screen flex flex-col justify-center items-center px-6 py-16 
+                 bg-gradient-to-b from-gray-900 via-black to-gray-950 text-white"
     >
-      {/* Title */}
       <motion.h2
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -37,67 +37,9 @@ export const Projects = () => {
         Projects
       </motion.h2>
 
-      {/* Project Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-6xl w-full">
         {projects.map((project, i) => (
-          <motion.div
-            key={i}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: i * 0.2, duration: 0.6 }}
-            viewport={{ once: true }}
-            whileHover={{ scale: 1.03 }}
-            className="group relative rounded-2xl overflow-hidden shadow-lg cursor-pointer bg-gray-800/30 border border-gray-700 hover:border-blue-500 transition"
-          >
-            {/* Image */}
-            <div className="overflow-hidden">
-              <img
-                src={project.image}
-                alt={project.title}
-                className="w-full h-56 object-cover group-hover:scale-110 transition duration-500"
-              />
-            </div>
-
-            {/* Content */}
-            <div className="p-6">
-              <h3 className="text-2xl font-semibold mb-2 group-hover:text-blue-400 transition">
-                {project.title}
-              </h3>
-              <p className="text-gray-300 mb-4">{project.desc}</p>
-
-              {/* Tech Stack */}
-              <div className="flex flex-wrap gap-2 mb-6">
-                {project.tech.map((t, idx) => (
-                  <span
-                    key={idx}
-                    className="px-3 py-1 bg-blue-500/20 text-blue-400 text-sm rounded-full"
-                  >
-                    {t}
-                  </span>
-                ))}
-              </div>
-
-              {/* Buttons */}
-              <div className="flex gap-4">
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 px-4 py-2 bg-gray-700/70 hover:bg-gray-600 rounded-lg transition"
-                >
-                  <Github size={18} /> Code
-                </a>
-                <a
-                  href={project.demo}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded-lg transition"
-                >
-                  <ExternalLink size={18} /> Live Demo
-                </a>
-              </div>
-            </div>
-          </motion.div>
+          <TiltCard key={i} project={project} index={i} />
         ))}
       </div>
     </section>
