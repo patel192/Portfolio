@@ -2,25 +2,33 @@ import { motion } from "framer-motion";
 import { TiltCard } from "./TiltCard";
 export const Projects = () => {
   const projects = [
-    {
-      title: "Expense Manager",
-      desc: "A modern web app to track expenses, visualize spending, and manage budgets with ease.",
-      tech: ["React", "Node.js", "MongoDB"],
-      github: "https://github.com/yourname/expense-manager",
-      demo: "https://expense-manager-demo.com",
-      image:
-        "https://images.unsplash.com/photo-1605902711622-cfb43c4437b5?auto=format&fit=crop&w=1200&q=80",
-    },
-    {
-      title: "SkillHub",
-      desc: "An e-learning platform with courses, progress tracking, and certificates for learners.",
-      tech: ["React", "Express", "PostgreSQL"],
-      github: "https://github.com/yourname/skillhub",
-      demo: "https://skillhub-demo.com",
-      image:
-        "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80",
-    },
-  ];
+  {
+    id: 1,
+    title: "Expense Manager",
+    desc: "A full-stack app to track daily expenses with charts.",
+    images: [
+      "https://source.unsplash.com/800x400/?finance,app",
+      "https://source.unsplash.com/800x400/?dashboard,app",
+      "https://source.unsplash.com/800x400/?mobile,app"
+    ],
+    tech: ["React", "Node.js", "MongoDB"],
+    github: "https://github.com/yourname/expense-manager",
+    demo: "https://expense-manager-demo.vercel.app"
+  },
+  {
+    id: 2,
+    title: "SkillHub",
+    desc: "An e-learning platform with progress tracking.",
+    images: [
+      "https://source.unsplash.com/800x400/?learning,app",
+      "https://source.unsplash.com/800x400/?education,app"
+    ],
+    tech: ["React", "Express", "PostgreSQL"],
+    github: "https://github.com/yourname/skillhub",
+    demo: "https://skillhub-demo.vercel.app"
+  }
+];
+
   return (
     <section
       id="projects"
