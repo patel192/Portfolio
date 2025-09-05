@@ -1,11 +1,12 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
+import { SquircleLoader } from "react-awesome-loaders";
 export const PreLoader = () => {
-    const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     // Fake loading delay (2s), you can adjust
-    const timer = setTimeout(() => setLoading(false), 2000);
+    const timer = setTimeout(() => setLoading(false), 2200);
     return () => clearTimeout(timer);
   }, []);
   return (
@@ -15,23 +16,21 @@ export const PreLoader = () => {
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.8 }}
-          className="fixed inset-0 bg-black flex items-center justify-center z-50"
+          className="fixed inset-0 bg-black flex flex-col items-center justify-center z-50"
         >
-          {/* Animated Text / Logo */}
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{
-              duration: 0.6,
-              repeat: Infinity,
-              repeatType: "reverse",
-            }}
-            className="text-3xl md:text-5xl font-bold text-blue-400 tracking-wide"
-          >
-            MyPortfolio 🚀
-          </motion.h1>
+          {/* Squircle Loader */}
+          <SquircleLoader
+            boxSize={50}
+            duration={2000}
+            colors={["#3B82F6", "#60A5FA", "#2563EB"]}
+          />
+
+          {/* Loading Text */}
+          <p className="mt-6 text-lg font-medium text-gray-300 tracking-widest">
+            Loading...
+          </p>
         </motion.div>
       )}
     </AnimatePresence>
-  )
-}
+  );
+};
