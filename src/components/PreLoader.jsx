@@ -5,8 +5,8 @@ export const PreLoader = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Fake loading delay (2s), you can adjust
-    const timer = setTimeout(() => setLoading(false), 2200);
+    
+    const timer = setTimeout(() => setLoading(false), 3000);
     return () => clearTimeout(timer);
   }, []);
   return (

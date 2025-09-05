@@ -42,7 +42,7 @@ export const Hero = () => {
         transition={{ duration: 1 }}
         className="relative text-5xl md:text-6xl font-extrabold text-white z-10"
       >
-        Hi, I'm <span className="text-blue-400">Your Name</span>
+        Hi, I'm <span className="text-blue-400">Muhammad Patel</span>
       </motion.h1>
 
       <motion.p
