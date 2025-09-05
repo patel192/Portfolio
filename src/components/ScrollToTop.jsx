@@ -24,8 +24,8 @@ export const ScrollToTop = () => {
           exit={{ opacity: 0, y: 50 }}
           transition={{ duration: 0.4 }}
           onClick={scrollToTop}
-          className="fixed bottom-6 right-6 p-3 rounded-full bg-blue-600 text-white shadow-lg 
-                     hover:bg-blue-500 hover:shadow-[0_0_15px_rgba(59,130,246,0.7)] transition z-50"
+          className="fixed bottom-6 right-6 p-3 rounded-full bg-blue-400 text-white shadow-lg 
+                     hover:bg-blue-500 hover:shadow-[0_0_20px_rgba(96,165,250,0.8)] transition z-50"
         >
           <ArrowUp size={22} />
         </motion.button>
