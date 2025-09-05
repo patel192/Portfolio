@@ -6,17 +6,11 @@ import { Hero } from "./components/Hero";
 import { Navbar } from "./components/Navbar";
 import { Projects } from "./components/Projects";
 import { Toaster } from "react-hot-toast";
+import { ScrollToTop } from "./components/ScrollToTop";
 
 function App() {
   return (
     <>
-    
-      <Navbar />
-      <Hero/>
-      <About/>
-      <Projects/>
-      <Contact/>
-      <Footer/>
       <Toaster
         position="top-right"
         toastOptions={{
@@ -33,6 +27,13 @@ function App() {
           top: 80, // leaves space below navbar
         }}
       />
+      <Navbar />
+      <Hero/>
+      <About/>
+      <Projects/>
+      <Contact/>
+      <Footer/>
+      <ScrollToTop/>
     </>
   );
 }

@@ -1,9 +1,11 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+
 export const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [active, setActive] = useState("home"); // track active section
 
   const links = [
     { name: "Home", id: "home" },
@@ -12,17 +14,35 @@ export const Navbar = () => {
     { name: "Contact", id: "contact" },
   ];
 
+  // Smooth scroll to section
   const handleScroll = (id) => {
     const section = document.getElementById(id);
-    section?.scrollIntoView({ behavior: "smooth" });
-    setMenuOpen(false); // close menu after click
+    const offset = 70; // adjust for navbar height
+    const top = section.offsetTop - offset;
+
+    window.scrollTo({ top, behavior: "smooth" });
+    setMenuOpen(false); // close mobile menu
   };
 
-  // Detect scroll for sticky effect
+  // Detect scroll position for sticky + active section
   useEffect(() => {
     const handleScrollY = () => {
       setScrolled(window.scrollY > 50);
+
+      // Detect active section
+      let current = "home";
+      links.forEach((link) => {
+        const section = document.getElementById(link.id);
+        if (section) {
+          const rect = section.getBoundingClientRect();
+          if (rect.top <= 100 && rect.bottom >= 100) {
+            current = link.id;
+          }
+        }
+      });
+      setActive(current);
     };
+
     window.addEventListener("scroll", handleScrollY);
     return () => window.removeEventListener("scroll", handleScrollY);
   }, []);
@@ -52,10 +72,16 @@ export const Navbar = () => {
             <li
               key={link.id}
               onClick={() => handleScroll(link.id)}
-              className="relative cursor-pointer group"
+              className={`relative cursor-pointer group transition ${
+                active === link.id ? "text-blue-400" : ""
+              }`}
             >
               {link.name}
-              <span className="absolute left-0 bottom-[-4px] w-0 h-[2px] bg-blue-400 transition-all group-hover:w-full"></span>
+              <span
+                className={`absolute left-0 bottom-[-4px] h-[2px] bg-blue-400 transition-all ${
+                  active === link.id ? "w-full" : "w-0 group-hover:w-full"
+                }`}
+              ></span>
             </li>
           ))}
         </ul>
@@ -76,9 +102,9 @@ export const Navbar = () => {
       <AnimatePresence>
         {menuOpen && (
           <motion.div
-            initial={{ x: "100%" }}
-            animate={{ x: 0 }}
-            exit={{ x: "100%" }}
+            initial={{ x: "100%", opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            exit={{ x: "100%", opacity: 0 }}
             transition={{ duration: 0.4 }}
             className="fixed top-0 right-0 h-screen w-2/3 bg-black/95 backdrop-blur-md shadow-lg z-40 flex flex-col items-center justify-center space-y-8"
           >
@@ -88,7 +114,11 @@ export const Navbar = () => {
                 initial={{ opacity: 0, x: 50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: i * 0.1 }}
-                className="text-xl text-gray-200 cursor-pointer hover:text-blue-400 transition"
+                className={`text-xl cursor-pointer transition ${
+                  active === link.id
+                    ? "text-blue-400"
+                    : "text-gray-200 hover:text-blue-400"
+                }`}
                 onClick={() => handleScroll(link.id)}
               >
                 {link.name}
