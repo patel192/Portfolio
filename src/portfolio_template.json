@@ -1,0 +1,11 @@
+{
+  "name": "Portfolio Contact Form",
+  "subject": "New message from {{from_name}} via Portfolio 🚀",
+  "from_email": "{{from_email}}",
+  "from_name": "{{from_name}}",
+  "to_email": "patelmuhammad192@gmail.com",
+  "reply_to": "{{from_email}}",
+  "cc": "",
+  "bcc": "",
+  "content": "📩 You got a new message from your portfolio!\n\n👤 Name: {{from_name}}\n📧 Email: {{from_email}}\n\n💬 Message:\n{{message}}"
+}
