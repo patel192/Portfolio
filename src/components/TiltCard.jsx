@@ -1,9 +1,10 @@
 import { Github, ExternalLink } from "lucide-react";
 import { useState } from "react";
 import { WorkModal } from "./WorkModal";
+
 export const TiltCard = ({ project, index }) => {
   const [rotate, setRotate] = useState({ x: 0, y: 0 });
-  const [open, setOpen] = useState(false); // modal state
+  const [open, setOpen] = useState(false);
 
   const handleMouseMove = (e) => {
     const rect = e.currentTarget.getBoundingClientRect();
@@ -66,28 +67,47 @@ export const TiltCard = ({ project, index }) => {
 
           {/* Buttons */}
           <div className="flex gap-4 flex-wrap">
-            <a
-              href={project.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 px-4 py-2 rounded-lg 
-                         bg-gray-700/70 hover:bg-gray-700
-                         text-white transition 
-                         shadow-md hover:shadow-[0_0_15px_rgba(59,130,246,0.7)]"
-            >
-              <Github size={18} /> Code
-            </a>
-            <a
-              href={project.demo}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 px-4 py-2 rounded-lg 
-                         bg-blue-600 hover:bg-blue-700
-                         text-white transition 
-                         shadow-md hover:shadow-[0_0_20px_rgba(59,130,246,0.9)]"
-            >
-              <ExternalLink size={18} /> Live Demo
-            </a>
+            {project.frontendRepo && (
+              <a
+                href={project.frontendRepo}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-4 py-2 rounded-lg 
+                           bg-gray-700/70 hover:bg-gray-700
+                           text-white transition 
+                           shadow-md hover:shadow-[0_0_15px_rgba(59,130,246,0.7)]"
+              >
+                <Github size={18} /> Frontend
+              </a>
+            )}
+
+            {project.backendRepo && (
+              <a
+                href={project.backendRepo}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-4 py-2 rounded-lg 
+                           bg-gray-700/70 hover:bg-gray-700
+                           text-white transition 
+                           shadow-md hover:shadow-[0_0_15px_rgba(59,130,246,0.7)]"
+              >
+                <Github size={18} /> Backend
+              </a>
+            )}
+
+            {project.demo && (
+              <a
+                href={project.demo}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-4 py-2 rounded-lg 
+                           bg-blue-600 hover:bg-blue-700
+                           text-white transition 
+                           shadow-md hover:shadow-[0_0_20px_rgba(59,130,246,0.9)]"
+              >
+                <ExternalLink size={18} /> Live Demo
+              </a>
+            )}
 
             {/* View More (Modal) */}
             <button

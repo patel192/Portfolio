@@ -1,27 +1,29 @@
 import { motion } from "framer-motion";
 import { TiltCard } from "./TiltCard";
+
 export const Projects = () => {
   const projects = [
-  {
-    id: 1,
-    title: "Expense Manager",
-    desc: "A full-stack app to track daily expenses with charts.",
-    image: "/cost-management-rgb-color-icon-vector.jpg",
-    tech: ["React", "Node.js", "MongoDB"],
-    github: "https://github.com/yourname/expense-manager",
-    demo: "https://expense-manager-frontend-sw2e.vercel.app"
-  },
-  {
-    id: 2,
-    title: "SkillHub",
-    desc: "An e-learning platform with progress tracking.",
-    image:
-      "/students-using-e-learning-platform-video-laptop-graduation-cap-online-education-teaching-concept-bright-vibrant-violet-135958890.webp",
-    tech: ["React", "Express", "PostgreSQL"],
-    github: "https://github.com/yourname/skillhub",
-    demo: "https://skill-hub-aq91.vercel.app"
-  }
-];
+    {
+      id: 1,
+      title: "Expense Manager",
+      desc: "A full-stack app to track daily expenses with charts.",
+      image: "/cost-management-rgb-color-icon-vector.jpg", // ✅ fixed path
+      tech: ["React", "Node.js", "MongoDB"],
+      frontendRepo: "https://github.com/patel192/Expense-Manager-Frontend",
+      backendRepo: "https://github.com/patel192/Learn-25-node",
+      demo: "https://expense-manager-frontend-sw2e.vercel.app"
+    },
+    {
+      id: 2,
+      title: "SkillHub",
+      desc: "An e-learning platform with progress tracking.",
+      image: "/students-using-e-learning-platform-video-laptop-graduation-cap-online-education-teaching-concept-bright-vibrant-violet-135958890.webp",
+      tech: ["React", "Express", "PostgreSQL"],
+      frontendRepo: "https://github.com/patel192/SkillHub",
+      backendRepo: "https://github.com/patel192/Skillhub-backend",
+      demo: "https://skill-hub-aq91.vercel.app"
+    }
+  ];
 
   return (
     <section

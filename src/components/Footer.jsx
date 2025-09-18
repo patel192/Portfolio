@@ -3,8 +3,7 @@ import { Github, Linkedin, Twitter, Mail } from "lucide-react";
 
 export const Footer = () => {
   return (
-    
-      <footer className="relative bg-gradient-to-b from-gray-900 to-black text-gray-400 pt-20 pb-10">
+    <footer className="relative bg-gradient-to-b from-gray-900 to-black text-gray-400 pt-20 pb-10">
       {/* Wave Shape Divider */}
       <div className="absolute top-0 left-0 w-full overflow-hidden leading-none">
         <svg
@@ -38,23 +37,25 @@ export const Footer = () => {
         viewport={{ once: true }}
         className="relative max-w-6xl mx-auto flex flex-col items-center gap-6 text-center"
       >
-        {/* Name / Branding */}
-        <h2 className="text-2xl md:text-3xl font-bold text-white">🚀 Your Name</h2>
+        {/* Role / Branding */}
+        <h2 className="text-2xl md:text-3xl font-bold text-white">
+          Full-Stack Web Developer
+        </h2>
         <p className="text-gray-400 text-sm">
-          Building smooth and modern web experiences
+          Turning ideas into scalable apps with clean code & creative UIs
         </p>
 
         {/* Social Links */}
         <div className="flex gap-6 mt-4">
           <a
-            href="mailto:youremail@example.com"
+            href="mailto:patelmuhammad192@gmail.com"
             className="p-3 rounded-full bg-gray-800 hover:bg-blue-600 transition 
                        shadow-md hover:shadow-[0_0_15px_rgba(59,130,246,0.7)]"
           >
             <Mail size={22} />
           </a>
           <a
-            href="https://github.com/yourusername"
+            href="https://github.com/patel192"
             target="_blank"
             rel="noopener noreferrer"
             className="p-3 rounded-full bg-gray-800 hover:bg-blue-600 transition 
@@ -84,10 +85,9 @@ export const Footer = () => {
 
         {/* Copyright */}
         <p className="text-xs text-gray-500 mt-6">
-          © {new Date().getFullYear()} Your Name. All rights reserved.
+          © {new Date().getFullYear()} Patel Muhammad. All rights reserved.
         </p>
       </motion.div>
     </footer>
-    
   )
 }
