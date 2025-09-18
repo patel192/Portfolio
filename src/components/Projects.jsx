@@ -6,10 +6,8 @@ export const Projects = () => {
     id: 1,
     title: "Expense Manager",
     desc: "A full-stack app to track daily expenses with charts.",
-    images: [
-      "https://source.unsplash.com/800x400/?finance,app",
-      "https://source.unsplash.com/800x400/?dashboard,app",
-      "https://source.unsplash.com/800x400/?mobile,app"
+    images: ["public/cost-management-rgb-color-icon-vector.jpg"
+      
     ],
     tech: ["React", "Node.js", "MongoDB"],
     github: "https://github.com/yourname/expense-manager",
@@ -20,8 +18,7 @@ export const Projects = () => {
     title: "SkillHub",
     desc: "An e-learning platform with progress tracking.",
     images: [
-      "https://source.unsplash.com/800x400/?learning,app",
-      "https://source.unsplash.com/800x400/?education,app"
+      "public/students-using-e-learning-platform-video-laptop-graduation-cap-online-education-teaching-concept-bright-vibrant-violet-135958890.webp"
     ],
     tech: ["React", "Express", "PostgreSQL"],
     github: "https://github.com/yourname/skillhub",
