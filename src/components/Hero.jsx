@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
+import { Briefcase, Code, Award } from "lucide-react";
 export const Hero = () => {
     const particlesInit = async (engine) => {
     await loadFull(engine);
@@ -55,13 +56,33 @@ export const Hero = () => {
         building smooth, modern, and interactive web experiences.
       </motion.p>
 
-      <motion.button
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.9 }}
-        className="relative mt-6 px-6 py-3 bg-blue-500 text-white font-semibold rounded-full shadow-lg hover:bg-blue-600 transition z-10"
+      {/* Modern Detail Showcase */}
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 1, duration: 0.8 }}
+        className="relative mt-8 bg-gray-800/40 backdrop-blur-md border border-gray-700 rounded-2xl p-6 flex flex-col gap-6 md:flex-row md:gap-10 items-center shadow-lg z-10"
       >
-        View My Work
-      </motion.button>
+        {/* Internship */}
+        <div className="flex items-center gap-3 text-gray-300">
+          <Briefcase className="text-blue-400" />
+          <span>Internship: Built <span className="text-blue-400">Expense Manager</span></span>
+        </div>
+
+        {/* Personal Project */}
+        <div className="flex items-center gap-3 text-gray-300">
+          <Award className="text-blue-400" />
+          <span>Personal Project: <span className="text-blue-400">SkillHub</span></span>
+        </div>
+
+        {/* Skills */}
+        <div className="flex items-center gap-3 text-gray-300">
+          <Code className="text-blue-400" />
+          <span>
+            Skills: React • Node.js • Express • MongoDB • Tailwind
+          </span>
+        </div>
+      </motion.div>
     </section>
   )
 }
