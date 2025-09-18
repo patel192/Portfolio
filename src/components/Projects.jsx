@@ -6,9 +6,7 @@ export const Projects = () => {
     id: 1,
     title: "Expense Manager",
     desc: "A full-stack app to track daily expenses with charts.",
-    images: ["public/cost-management-rgb-color-icon-vector.jpg"
-      
-    ],
+    image: "public/cost-management-rgb-color-icon-vector.jpg",
     tech: ["React", "Node.js", "MongoDB"],
     github: "https://github.com/yourname/expense-manager",
     demo: "https://expense-manager-frontend-sw2e.vercel.app"
@@ -17,9 +15,8 @@ export const Projects = () => {
     id: 2,
     title: "SkillHub",
     desc: "An e-learning platform with progress tracking.",
-    images: [
-      "public/students-using-e-learning-platform-video-laptop-graduation-cap-online-education-teaching-concept-bright-vibrant-violet-135958890.webp"
-    ],
+    image:
+      "public/students-using-e-learning-platform-video-laptop-graduation-cap-online-education-teaching-concept-bright-vibrant-violet-135958890.webp",
     tech: ["React", "Express", "PostgreSQL"],
     github: "https://github.com/yourname/skillhub",
     demo: "https://skill-hub-aq91.vercel.app"
