@@ -13,7 +13,7 @@ export const Projects = () => {
     ],
     tech: ["React", "Node.js", "MongoDB"],
     github: "https://github.com/yourname/expense-manager",
-    demo: "https://expense-manager-demo.vercel.app"
+    demo: "https://expense-manager-frontend-sw2e.vercel.app"
   },
   {
     id: 2,
@@ -25,7 +25,7 @@ export const Projects = () => {
     ],
     tech: ["React", "Express", "PostgreSQL"],
     github: "https://github.com/yourname/skillhub",
-    demo: "https://skillhub-demo.vercel.app"
+    demo: "skill-hub-aq91.vercel.app"
   }
 ];
 
