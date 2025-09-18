@@ -25,7 +25,7 @@ export const Projects = () => {
     ],
     tech: ["React", "Express", "PostgreSQL"],
     github: "https://github.com/yourname/skillhub",
-    demo: "skill-hub-aq91.vercel.app"
+    demo: "https://skill-hub-aq91.vercel.app"
   }
 ];
 
