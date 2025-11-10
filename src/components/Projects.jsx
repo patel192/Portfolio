@@ -11,7 +11,7 @@ export const Projects = () => {
       tech: ["React", "Node.js", "MongoDB"],
       frontendRepo: "https://github.com/patel192/Expense-Manager-Frontend",
       backendRepo: "https://github.com/patel192/Learn-25-node",
-      demo: "https://expense-manager-frontend-sw2e-iuovzhwau.vercel.app"
+      demo: "https://expense-manager-frontend-topaz.vercel.app"
     },
     {
       id: 2,
