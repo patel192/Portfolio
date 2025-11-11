@@ -63,6 +63,7 @@ export const Navbar = () => {
             src={logo}
             alt="Logo"
             className="h-15 w-auto object-contain sm:h-12 md:h-10 transition-transform hover:scale-105"
+            style={{height:"20px",width:"20px"}}
           />
         </div>
 
