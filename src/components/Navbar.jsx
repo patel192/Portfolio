@@ -1,11 +1,12 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import logo from "/public/digital_tech_book_logo_design_template-removebg-preview.png"; // ✅ your logo path (adjust as needed)
 
 export const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [active, setActive] = useState("home"); // track active section
+  const [active, setActive] = useState("home");
 
   const links = [
     { name: "Home", id: "home" },
@@ -14,22 +15,17 @@ export const Navbar = () => {
     { name: "Contact", id: "contact" },
   ];
 
-  // Smooth scroll to section
   const handleScroll = (id) => {
     const section = document.getElementById(id);
-    const offset = 70; // adjust for navbar height
+    const offset = 70;
     const top = section.offsetTop - offset;
-
     window.scrollTo({ top, behavior: "smooth" });
-    setMenuOpen(false); // close mobile menu
+    setMenuOpen(false);
   };
 
-  // Detect scroll position for sticky + active section
   useEffect(() => {
     const handleScrollY = () => {
       setScrolled(window.scrollY > 50);
-
-      // Detect active section
       let current = "home";
       links.forEach((link) => {
         const section = document.getElementById(link.id);
@@ -42,10 +38,10 @@ export const Navbar = () => {
       });
       setActive(current);
     };
-
     window.addEventListener("scroll", handleScrollY);
     return () => window.removeEventListener("scroll", handleScrollY);
   }, []);
+
   return (
     <motion.nav
       initial={{ y: -80, opacity: 0 }}
@@ -58,13 +54,17 @@ export const Navbar = () => {
       }`}
     >
       <div className="max-w-6xl mx-auto px-6 flex justify-between items-center">
-        {/* Logo */}
-        <h1
-          className="text-2xl font-bold text-blue-400 tracking-wide cursor-pointer"
+        {/* ✅ Logo (replaces text) */}
+        <div
+          className="flex items-center gap-2 cursor-pointer"
           onClick={() => handleScroll("home")}
         >
-          MyPortfolio
-        </h1>
+          <img
+            src={logo}
+            alt="Logo"
+            className="h-10 w-auto object-contain sm:h-12 md:h-10 transition-transform hover:scale-105"
+          />
+        </div>
 
         {/* Desktop Menu */}
         <ul className="hidden md:flex gap-8 text-gray-300 font-medium">
