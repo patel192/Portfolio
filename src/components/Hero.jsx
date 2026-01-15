@@ -1,21 +1,16 @@
 import { motion } from "framer-motion";
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
-import { Briefcase } from "lucide-react";
+import { Briefcase, User, Layers } from "lucide-react";
 
-const SkillCard = ({ name, icon, color }) => (
-  <div className="flex flex-col items-center justify-center gap-3 p-5 rounded-xl
-                  bg-gray-900 border border-gray-700 hover:border-blue-500 transition">
-    <div
-      className="w-14 h-14"
-      dangerouslySetInnerHTML={{
-        __html: simpleIcons.get(icon).svg.replace(
-          "<svg",
-          `<svg fill="${color}" width="56" height="56"`
-        ),
-      }}
-    />
-    <span className="text-sm text-gray-300 font-semibold">{name}</span>
+const Skill = ({ name, color }) => (
+  <div
+    className="px-6 py-4 text-lg font-semibold rounded-2xl 
+               bg-gray-900 border border-gray-700 
+               hover:border-blue-500 transition text-center"
+    style={{ color }}
+  >
+    {name}
   </div>
 );
 
@@ -27,7 +22,7 @@ export const Hero = () => {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex flex-col justify-center items-center text-center bg-gradient-to-b from-gray-900 via-gray-950 to-black overflow-hidden"
+      className="relative min-h-screen bg-gradient-to-b from-gray-900 via-gray-950 to-black overflow-hidden"
     >
       {/* Particles */}
       <Particles
@@ -35,6 +30,7 @@ export const Hero = () => {
         init={particlesInit}
         options={{
           background: { color: "transparent" },
+          fpsLimit: 60,
           particles: {
             number: { value: 60 },
             color: { value: "#60A5FA" },
@@ -45,69 +41,133 @@ export const Hero = () => {
         className="absolute inset-0 z-0"
       />
 
-      {/* Title */}
-      <motion.h1
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
-        className="relative text-5xl md:text-6xl font-extrabold text-white z-10"
-      >
-        Muhammad <span className="text-blue-400">Patel</span>
-      </motion.h1>
+      <div className="relative z-10 max-w-7xl mx-auto px-6 py-24 space-y-20">
 
-      <motion.p
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.4 }}
-        className="relative mt-4 text-lg md:text-xl text-gray-300 z-10"
-      >
-        Full Stack Web Developer (MERN + Firebase)
-      </motion.p>
+        {/* ================= INTRO ================= */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          className="text-center space-y-6"
+        >
+          <h1 className="text-5xl md:text-7xl font-extrabold text-white">
+            Muhammad <span className="text-blue-400">Patel</span>
+          </h1>
 
-      {/* Experience */}
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.8 }}
-        className="relative mt-6 flex items-center gap-2 text-gray-300 z-10"
-      >
-        <Briefcase className="text-blue-400" size={18} />
-        Unified Mentor Intern – Operation Scheduler & SuperMall Projects
-      </motion.div>
+          <p className="text-2xl text-gray-300">
+            Full Stack Web Developer (MERN • Firebase)
+          </p>
 
-      {/* Skills Section */}
-      <motion.div
-        initial={{ opacity: 0, y: 40 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1.2 }}
-        className="relative mt-10 w-full max-w-6xl px-6 z-10"
-      >
-        {/* Frontend */}
-        <h3 className="text-xl font-bold text-blue-400 mb-4 text-left">
-          Frontend Skills
-        </h3>
+          <p className="max-w-3xl mx-auto text-lg text-gray-400 leading-relaxed">
+            I am a Full Stack Web Developer focused on building scalable, real-world
+            web applications with modern technologies. I have developed complex
+            systems like hospital operation scheduling platforms and multi-role
+            e-commerce platforms, with strong emphasis on clean UI, architecture,
+            and maintainable code.
+          </p>
+        </motion.div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 mb-10">
-          <SkillCard name="HTML5" icon="html5" color="#E34F26" />
-          <SkillCard name="CSS3" icon="css3" color="#1572B6" />
-          <SkillCard name="JavaScript" icon="javascript" color="#F7DF1E" />
-          <SkillCard name="React" icon="react" color="#61DAFB" />
-          <SkillCard name="Tailwind CSS" icon="tailwindcss" color="#38BDF8" />
-        </div>
+        {/* ================= EXPERIENCE STRIP ================= */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3 }}
+          className="grid md:grid-cols-3 gap-6"
+        >
+          <div className="bg-gray-900 border border-gray-700 rounded-2xl p-6 space-y-3">
+            <User className="text-blue-400" />
+            <h3 className="text-xl font-semibold text-white">Professional Focus</h3>
+            <p className="text-gray-400">
+              Strong focus on frontend architecture, backend logic, and real-world
+              system building.
+            </p>
+          </div>
 
-        {/* Backend */}
-        <h3 className="text-xl font-bold text-blue-400 mb-4 text-left">
-          Backend & Tools
-        </h3>
+          <div className="bg-gray-900 border border-gray-700 rounded-2xl p-6 space-y-3">
+            <Briefcase className="text-blue-400" />
+            <h3 className="text-xl font-semibold text-white">Internship Experience</h3>
+            <p className="text-gray-400">
+              Unified Mentor Internship – Built production-level applications:
+              Operation Scheduler & SuperMall Web App.
+            </p>
+          </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
-          <SkillCard name="Node.js" icon="nodedotjs" color="#339933" />
-          <SkillCard name="Express" icon="express" color="#ffffff" />
-          <SkillCard name="MongoDB" icon="mongodb" color="#47A248" />
-          <SkillCard name="Firebase" icon="firebase" color="#FFCA28" />
-          <SkillCard name="GitHub" icon="github" color="#ffffff" />
-        </div>
-      </motion.div>
+          <div className="bg-gray-900 border border-gray-700 rounded-2xl p-6 space-y-3">
+            <Layers className="text-blue-400" />
+            <h3 className="text-xl font-semibold text-white">Project Approach</h3>
+            <p className="text-gray-400">
+              Focused on building structured, modular, and scalable systems
+              instead of simple demo projects.
+            </p>
+          </div>
+        </motion.div>
+
+        {/* ================= SKILLS ================= */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.6 }}
+          className="space-y-16"
+        >
+          <h2 className="text-4xl font-bold text-center text-blue-400">
+            Technical Skills
+          </h2>
+
+          {/* Frontend */}
+          <div className="space-y-6">
+            <h3 className="text-2xl font-semibold text-white">
+              Frontend Development
+            </h3>
+
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+              <Skill name="HTML5" color="#E34F26" />
+              <Skill name="CSS3" color="#1572B6" />
+              <Skill name="JavaScript (ES6+)" color="#F7DF1E" />
+              <Skill name="React.js" color="#61DAFB" />
+              <Skill name="Tailwind CSS" color="#38BDF8" />
+              <Skill name="Responsive UI Design" color="#ffffff" />
+              <Skill name="UI/UX Implementation" color="#ffffff" />
+              <Skill name="Component Architecture" color="#ffffff" />
+            </div>
+          </div>
+
+          {/* Backend */}
+          <div className="space-y-6">
+            <h3 className="text-2xl font-semibold text-white">
+              Backend & Database
+            </h3>
+
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+              <Skill name="Node.js" color="#3C873A" />
+              <Skill name="Express.js" color="#ffffff" />
+              <Skill name="MongoDB" color="#47A248" />
+              <Skill name="Firebase Firestore" color="#FFCA28" />
+              <Skill name="REST APIs" color="#ffffff" />
+              <Skill name="Authentication Systems" color="#ffffff" />
+              <Skill name="Role-Based Access Control" color="#ffffff" />
+              <Skill name="Database Design" color="#ffffff" />
+            </div>
+          </div>
+
+          {/* Tools */}
+          <div className="space-y-6">
+            <h3 className="text-2xl font-semibold text-white">
+              Tools & Workflow
+            </h3>
+
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+              <Skill name="Git & GitHub" color="#ffffff" />
+              <Skill name="Vercel Deployment" color="#ffffff" />
+              <Skill name="Firebase Hosting" color="#ffffff" />
+              <Skill name="Postman" color="#ffffff" />
+              <Skill name="VS Code" color="#ffffff" />
+              <Skill name="Project Structuring" color="#ffffff" />
+              <Skill name="Debugging" color="#ffffff" />
+              <Skill name="Performance Optimization" color="#ffffff" />
+            </div>
+          </div>
+        </motion.div>
+      </div>
     </section>
   );
 };
