@@ -3,14 +3,24 @@ import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
 import { Briefcase, User, Layers } from "lucide-react";
 
-const Skill = ({ name, color }) => (
+// Skill Icons
+import {
+  FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs, FaGitAlt
+} from "react-icons/fa";
+import {
+  SiTailwindcss, SiMongodb, SiFirebase, SiPostman, SiVercel
+} from "react-icons/si";
+
+const Skill = ({ name, icon, color }) => (
   <div
-    className="px-6 py-4 text-lg font-semibold rounded-2xl 
+    className="flex items-center gap-4 px-6 py-5 text-lg font-semibold rounded-2xl 
                bg-gray-900 border border-gray-700 
-               hover:border-blue-500 transition text-center"
-    style={{ color }}
+               hover:border-blue-500 transition"
   >
-    {name}
+    <span className="text-3xl" style={{ color }}>
+      {icon}
+    </span>
+    <span className="text-white">{name}</span>
   </div>
 );
 
@@ -43,7 +53,7 @@ export const Hero = () => {
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 py-24 space-y-20">
 
-        {/* ================= INTRO ================= */}
+        {/* INTRO */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
@@ -67,7 +77,7 @@ export const Hero = () => {
           </p>
         </motion.div>
 
-        {/* ================= EXPERIENCE STRIP ================= */}
+        {/* EXPERIENCE STRIP */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -96,13 +106,12 @@ export const Hero = () => {
             <Layers className="text-blue-400" />
             <h3 className="text-xl font-semibold text-white">Project Approach</h3>
             <p className="text-gray-400">
-              Focused on building structured, modular, and scalable systems
-              instead of simple demo projects.
+              Focused on building structured, modular, and scalable systems.
             </p>
           </div>
         </motion.div>
 
-        {/* ================= SKILLS ================= */}
+        {/* SKILLS */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
@@ -115,55 +124,33 @@ export const Hero = () => {
 
           {/* Frontend */}
           <div className="space-y-6">
-            <h3 className="text-2xl font-semibold text-white">
-              Frontend Development
-            </h3>
-
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-              <Skill name="HTML5" color="#E34F26" />
-              <Skill name="CSS3" color="#1572B6" />
-              <Skill name="JavaScript (ES6+)" color="#F7DF1E" />
-              <Skill name="React.js" color="#61DAFB" />
-              <Skill name="Tailwind CSS" color="#38BDF8" />
-              <Skill name="Responsive UI Design" color="#ffffff" />
-              <Skill name="UI/UX Implementation" color="#ffffff" />
-              <Skill name="Component Architecture" color="#ffffff" />
+            <h3 className="text-2xl font-semibold text-white">Frontend Development</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+              <Skill name="HTML5" icon={<FaHtml5 />} color="#E34F26" />
+              <Skill name="CSS3" icon={<FaCss3Alt />} color="#1572B6" />
+              <Skill name="JavaScript" icon={<FaJs />} color="#F7DF1E" />
+              <Skill name="React.js" icon={<FaReact />} color="#61DAFB" />
+              <Skill name="Tailwind CSS" icon={<SiTailwindcss />} color="#38BDF8" />
             </div>
           </div>
 
           {/* Backend */}
           <div className="space-y-6">
-            <h3 className="text-2xl font-semibold text-white">
-              Backend & Database
-            </h3>
-
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-              <Skill name="Node.js" color="#3C873A" />
-              <Skill name="Express.js" color="#ffffff" />
-              <Skill name="MongoDB" color="#47A248" />
-              <Skill name="Firebase Firestore" color="#FFCA28" />
-              <Skill name="REST APIs" color="#ffffff" />
-              <Skill name="Authentication Systems" color="#ffffff" />
-              <Skill name="Role-Based Access Control" color="#ffffff" />
-              <Skill name="Database Design" color="#ffffff" />
+            <h3 className="text-2xl font-semibold text-white">Backend & Database</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+              <Skill name="Node.js" icon={<FaNodeJs />} color="#3C873A" />
+              <Skill name="MongoDB" icon={<SiMongodb />} color="#47A248" />
+              <Skill name="Firebase" icon={<SiFirebase />} color="#FFCA28" />
             </div>
           </div>
 
           {/* Tools */}
           <div className="space-y-6">
-            <h3 className="text-2xl font-semibold text-white">
-              Tools & Workflow
-            </h3>
-
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-              <Skill name="Git & GitHub" color="#ffffff" />
-              <Skill name="Vercel Deployment" color="#ffffff" />
-              <Skill name="Firebase Hosting" color="#ffffff" />
-              <Skill name="Postman" color="#ffffff" />
-              <Skill name="VS Code" color="#ffffff" />
-              <Skill name="Project Structuring" color="#ffffff" />
-              <Skill name="Debugging" color="#ffffff" />
-              <Skill name="Performance Optimization" color="#ffffff" />
+            <h3 className="text-2xl font-semibold text-white">Tools & Workflow</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+              <Skill name="Git & GitHub" icon={<FaGitAlt />} color="#F05032" />
+              <Skill name="Postman" icon={<SiPostman />} color="#FF6C37" />
+              <Skill name="Vercel" icon={<SiVercel />} color="#ffffff" />
             </div>
           </div>
         </motion.div>
