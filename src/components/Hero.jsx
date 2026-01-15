@@ -143,8 +143,6 @@ export const Hero = () => {
               <Skill name="Firebase" icon={<SiFirebase />} color="#FFCA28" />
             </div>
           </div>
-
-          {/* Tools */}
           <div className="space-y-6">
             <h3 className="text-2xl font-semibold text-white">Tools & Workflow</h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
