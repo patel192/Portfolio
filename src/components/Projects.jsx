@@ -11,18 +11,39 @@ export const Projects = () => {
       tech: ["React", "Node.js", "MongoDB"],
       frontendRepo: "https://github.com/patel192/Expense-Manager-Frontend",
       backendRepo: "https://github.com/patel192/Learn-25-node",
-      demo: "https://expense-manager-frontend-topaz.vercel.app"
+      demo: "https://expense-manager-frontend-topaz.vercel.app",
     },
     {
       id: 2,
       title: "SkillHub",
       desc: "An e-learning platform with progress tracking.",
-      image: "/students-using-e-learning-platform-video-laptop-graduation-cap-online-education-teaching-concept-bright-vibrant-violet-135958890.webp",
+      image:
+        "/students-using-e-learning-platform-video-laptop-graduation-cap-online-education-teaching-concept-bright-vibrant-violet-135958890.webp",
       tech: ["React", "Express", "PostgreSQL"],
       frontendRepo: "https://github.com/patel192/SkillHub",
       backendRepo: "https://github.com/patel192/Skillhub-backend",
-      demo: "https://skill-hub-lac.vercel.app"
-    }
+      demo: "https://skill-hub-lac.vercel.app",
+    },
+    {
+      id: 2,
+      title: "Operation Scheduler",
+      desc: "Hospital OT scheduling system with Admin, Doctor & OT Staff dashboards.",
+      image: "/operation-scheduler.jpg",
+      tech: ["JavaScript", "Tailwind", "Firebase", "Firestore"],
+      frontendRepo: "https://github.com/patel192/Operation-Scheduler-System",
+      backendRepo: "https://github.com/patel192/Operation-Scheduler-System",
+      demo: "https://operation-scheduler-a44f8.web.app/",
+    },
+    {
+      id: 2,
+      title: "Supermall Web Application",
+      desc: "Multi-role e-commerce platform with merchants, admins, offers & analytics.",
+      image: "/Supermall-web-app.jpg",
+      tech: ["HTML", "Tailwind", "Firebase"],
+      frontendRepo: "https://github.com/patel192/Super-mall-WebApp",
+      backendRepo: "https://github.com/patel192/Super-mall-WebApp",
+      demo: "https://supermall-web-app-ee373.web.app/",
+    },
   ];
 
   return (
