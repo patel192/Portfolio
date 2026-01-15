@@ -1,7 +1,14 @@
 import { motion } from "framer-motion";
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
-import { Briefcase, Code, Award } from "lucide-react";
+import {
+  Briefcase,
+  Code2,
+  Database,
+  Server,
+  Layers,
+  Cpu
+} from "lucide-react";
 
 export const Hero = () => {
   const particlesInit = async (engine) => {
@@ -11,7 +18,7 @@ export const Hero = () => {
   return (
     <section
       id="home"
-      className="relative h-screen flex flex-col justify-center items-center text-center bg-gradient-to-b from-gray-900 via-gray-950 to-black overflow-hidden"
+      className="relative min-h-screen flex flex-col justify-center items-center text-center bg-gradient-to-b from-gray-900 via-gray-950 to-black overflow-hidden"
     >
       {/* Particle Background */}
       <Particles
@@ -38,7 +45,7 @@ export const Hero = () => {
         className="absolute inset-0 z-0"
       />
 
-      {/* Heading */}
+      {/* Name */}
       <motion.h1
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
@@ -48,49 +55,71 @@ export const Hero = () => {
         Hi, I'm <span className="text-blue-400">Muhammad Patel</span>
       </motion.h1>
 
+      {/* Subtitle */}
       <motion.p
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 0.5, duration: 1 }}
-        className="relative mt-4 text-lg md:text-xl text-gray-300 max-w-xl z-10"
+        transition={{ delay: 0.4, duration: 1 }}
+        className="relative mt-4 text-lg md:text-xl text-gray-300 max-w-2xl z-10"
       >
-        A results-driven <span className="font-semibold text-blue-400">Full Stack Developer</span>{" "}
-        building scalable web applications and real-world systems.
+        A <span className="font-semibold text-blue-400">Full Stack Developer</span> specializing in building
+        scalable web applications, real-time systems, and modern UI experiences.
       </motion.p>
 
-      {/* Showcase Panel */}
+      {/* Skills + Experience Card */}
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1, duration: 0.8 }}
-        className="relative mt-8 bg-gray-800/40 backdrop-blur-md border border-gray-700 rounded-2xl p-6 flex flex-col gap-6 md:flex-row md:gap-10 items-center shadow-lg z-10"
+        transition={{ delay: 0.9, duration: 0.8 }}
+        className="relative mt-10 bg-gray-800/40 backdrop-blur-md border border-gray-700 rounded-2xl p-6 w-full max-w-5xl shadow-xl z-10"
       >
-        {/* Internship Projects */}
-        <div className="flex items-center gap-3 text-gray-300">
-          <Briefcase className="text-blue-400" />
-          <span>
-            Internship Projects:{" "}
-            <span className="text-blue-400">Operation Scheduler</span>,{" "}
-            <span className="text-blue-400">SuperMall</span>
-          </span>
-        </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left text-gray-300 text-sm">
 
-        {/* Major Personal Projects */}
-        <div className="flex items-center gap-3 text-gray-300">
-          <Award className="text-blue-400" />
-          <span>
-            Major Projects:{" "}
-            <span className="text-blue-400">Expense Manager</span>,{" "}
-            <span className="text-blue-400">SkillHub</span>
-          </span>
-        </div>
+          {/* Experience */}
+          <div className="space-y-3">
+            <div className="flex items-center gap-2 text-blue-400 font-semibold">
+              <Briefcase size={18} /> Experience
+            </div>
+            <p>Internship Projects:</p>
+            <ul className="list-disc list-inside text-gray-400">
+              <li>Operation Scheduler (Healthcare System)</li>
+              <li>SuperMall E-commerce Platform</li>
+            </ul>
+            <p>Major Projects:</p>
+            <ul className="list-disc list-inside text-gray-400">
+              <li>Expense Manager</li>
+              <li>SkillHub LMS Platform</li>
+            </ul>
+          </div>
 
-        {/* Skills */}
-        <div className="flex items-center gap-3 text-gray-300">
-          <Code className="text-blue-400" />
-          <span>
-            Stack: React • Node.js • Express • MongoDB • Firebase • Tailwind
-          </span>
+          {/* Frontend */}
+          <div className="space-y-3">
+            <div className="flex items-center gap-2 text-blue-400 font-semibold">
+              <Layers size={18} /> Frontend
+            </div>
+            <ul className="space-y-1 text-gray-400">
+              <li className="flex items-center gap-2"><Code2 size={14}/> React.js</li>
+              <li className="flex items-center gap-2"><Code2 size={14}/> JavaScript (ES6+)</li>
+              <li className="flex items-center gap-2"><Code2 size={14}/> HTML5 & CSS3</li>
+              <li className="flex items-center gap-2"><Code2 size={14}/> Tailwind CSS</li>
+              <li className="flex items-center gap-2"><Code2 size={14}/> Responsive UI/UX</li>
+            </ul>
+          </div>
+
+          {/* Backend */}
+          <div className="space-y-3">
+            <div className="flex items-center gap-2 text-blue-400 font-semibold">
+              <Server size={18} /> Backend & Tools
+            </div>
+            <ul className="space-y-1 text-gray-400">
+              <li className="flex items-center gap-2"><Database size={14}/> MongoDB</li>
+              <li className="flex items-center gap-2"><Database size={14}/> Firebase (Auth, Firestore, Hosting)</li>
+              <li className="flex items-center gap-2"><Server size={14}/> Node.js & Express</li>
+              <li className="flex items-center gap-2"><Cpu size={14}/> REST APIs</li>
+              <li className="flex items-center gap-2"><Cpu size={14}/> Git & GitHub</li>
+              <li className="flex items-center gap-2"><Cpu size={14}/> Vercel & Firebase Deployment</li>
+            </ul>
+          </div>
         </div>
       </motion.div>
     </section>
