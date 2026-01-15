@@ -1,14 +1,23 @@
 import { motion } from "framer-motion";
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
-import {
-  Briefcase,
-  Code2,
-  Database,
-  Server,
-  Layers,
-  Cpu
-} from "lucide-react";
+import { Briefcase } from "lucide-react";
+
+const SkillCard = ({ name, icon, color }) => (
+  <div className="flex flex-col items-center justify-center gap-3 p-5 rounded-xl
+                  bg-gray-900 border border-gray-700 hover:border-blue-500 transition">
+    <div
+      className="w-14 h-14"
+      dangerouslySetInnerHTML={{
+        __html: simpleIcons.get(icon).svg.replace(
+          "<svg",
+          `<svg fill="${color}" width="56" height="56"`
+        ),
+      }}
+    />
+    <span className="text-sm text-gray-300 font-semibold">{name}</span>
+  </div>
+);
 
 export const Hero = () => {
   const particlesInit = async (engine) => {
@@ -20,106 +29,83 @@ export const Hero = () => {
       id="home"
       className="relative min-h-screen flex flex-col justify-center items-center text-center bg-gradient-to-b from-gray-900 via-gray-950 to-black overflow-hidden"
     >
-      {/* Particle Background */}
+      {/* Particles */}
       <Particles
         id="tsparticles"
         init={particlesInit}
         options={{
           background: { color: "transparent" },
-          fpsLimit: 60,
-          interactivity: {
-            events: { onHover: { enable: true, mode: "repulse" }, resize: true },
-            modes: { repulse: { distance: 100, duration: 0.4 } },
-          },
           particles: {
+            number: { value: 60 },
             color: { value: "#60A5FA" },
-            links: { color: "#60A5FA", distance: 150, enable: true, opacity: 0.4, width: 1 },
-            move: { enable: true, speed: 2, outModes: { default: "bounce" } },
-            number: { value: 60, density: { enable: true, area: 800 } },
-            opacity: { value: 0.5 },
-            shape: { type: "circle" },
-            size: { value: { min: 1, max: 5 } },
+            links: { enable: true, color: "#60A5FA", opacity: 0.3 },
+            move: { enable: true, speed: 2 },
           },
-          detectRetina: true,
         }}
         className="absolute inset-0 z-0"
       />
 
-      {/* Name */}
+      {/* Title */}
       <motion.h1
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
         className="relative text-5xl md:text-6xl font-extrabold text-white z-10"
       >
-        Hi, I'm <span className="text-blue-400">Muhammad Patel</span>
+        Muhammad <span className="text-blue-400">Patel</span>
       </motion.h1>
 
-      {/* Subtitle */}
       <motion.p
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 0.4, duration: 1 }}
-        className="relative mt-4 text-lg md:text-xl text-gray-300 max-w-2xl z-10"
+        transition={{ delay: 0.4 }}
+        className="relative mt-4 text-lg md:text-xl text-gray-300 z-10"
       >
-        A <span className="font-semibold text-blue-400">Full Stack Developer</span> specializing in building
-        scalable web applications, real-time systems, and modern UI experiences.
+        Full Stack Web Developer (MERN + Firebase)
       </motion.p>
 
-      {/* Skills + Experience Card */}
+      {/* Experience */}
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.8 }}
+        className="relative mt-6 flex items-center gap-2 text-gray-300 z-10"
+      >
+        <Briefcase className="text-blue-400" size={18} />
+        Unified Mentor Intern – Operation Scheduler & SuperMall Projects
+      </motion.div>
+
+      {/* Skills Section */}
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.9, duration: 0.8 }}
-        className="relative mt-10 bg-gray-800/40 backdrop-blur-md border border-gray-700 rounded-2xl p-6 w-full max-w-5xl shadow-xl z-10"
+        transition={{ delay: 1.2 }}
+        className="relative mt-10 w-full max-w-6xl px-6 z-10"
       >
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left text-gray-300 text-sm">
+        {/* Frontend */}
+        <h3 className="text-xl font-bold text-blue-400 mb-4 text-left">
+          Frontend Skills
+        </h3>
 
-          {/* Experience */}
-          <div className="space-y-3">
-            <div className="flex items-center gap-2 text-blue-400 font-semibold">
-              <Briefcase size={18} /> Experience
-            </div>
-            <p>Internship Projects:</p>
-            <ul className="list-disc list-inside text-gray-400">
-              <li>Operation Scheduler (Healthcare System)</li>
-              <li>SuperMall E-commerce Platform</li>
-            </ul>
-            <p>Major Projects:</p>
-            <ul className="list-disc list-inside text-gray-400">
-              <li>Expense Manager</li>
-              <li>SkillHub LMS Platform</li>
-            </ul>
-          </div>
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 mb-10">
+          <SkillCard name="HTML5" icon="html5" color="#E34F26" />
+          <SkillCard name="CSS3" icon="css3" color="#1572B6" />
+          <SkillCard name="JavaScript" icon="javascript" color="#F7DF1E" />
+          <SkillCard name="React" icon="react" color="#61DAFB" />
+          <SkillCard name="Tailwind CSS" icon="tailwindcss" color="#38BDF8" />
+        </div>
 
-          {/* Frontend */}
-          <div className="space-y-3">
-            <div className="flex items-center gap-2 text-blue-400 font-semibold">
-              <Layers size={18} /> Frontend
-            </div>
-            <ul className="space-y-1 text-gray-400">
-              <li className="flex items-center gap-2"><Code2 size={14}/> React.js</li>
-              <li className="flex items-center gap-2"><Code2 size={14}/> JavaScript (ES6+)</li>
-              <li className="flex items-center gap-2"><Code2 size={14}/> HTML5 & CSS3</li>
-              <li className="flex items-center gap-2"><Code2 size={14}/> Tailwind CSS</li>
-              <li className="flex items-center gap-2"><Code2 size={14}/> Responsive UI/UX</li>
-            </ul>
-          </div>
+        {/* Backend */}
+        <h3 className="text-xl font-bold text-blue-400 mb-4 text-left">
+          Backend & Tools
+        </h3>
 
-          {/* Backend */}
-          <div className="space-y-3">
-            <div className="flex items-center gap-2 text-blue-400 font-semibold">
-              <Server size={18} /> Backend & Tools
-            </div>
-            <ul className="space-y-1 text-gray-400">
-              <li className="flex items-center gap-2"><Database size={14}/> MongoDB</li>
-              <li className="flex items-center gap-2"><Database size={14}/> Firebase (Auth, Firestore, Hosting)</li>
-              <li className="flex items-center gap-2"><Server size={14}/> Node.js & Express</li>
-              <li className="flex items-center gap-2"><Cpu size={14}/> REST APIs</li>
-              <li className="flex items-center gap-2"><Cpu size={14}/> Git & GitHub</li>
-              <li className="flex items-center gap-2"><Cpu size={14}/> Vercel & Firebase Deployment</li>
-            </ul>
-          </div>
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
+          <SkillCard name="Node.js" icon="nodedotjs" color="#339933" />
+          <SkillCard name="Express" icon="express" color="#ffffff" />
+          <SkillCard name="MongoDB" icon="mongodb" color="#47A248" />
+          <SkillCard name="Firebase" icon="firebase" color="#FFCA28" />
+          <SkillCard name="GitHub" icon="github" color="#ffffff" />
         </div>
       </motion.div>
     </section>
