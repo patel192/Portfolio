@@ -2,10 +2,12 @@ import { motion } from "framer-motion";
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
 import { Briefcase, Code, Award } from "lucide-react";
+
 export const Hero = () => {
-    const particlesInit = async (engine) => {
+  const particlesInit = async (engine) => {
     await loadFull(engine);
   };
+
   return (
     <section
       id="home"
@@ -36,7 +38,7 @@ export const Hero = () => {
         className="absolute inset-0 z-0"
       />
 
-      {/* Hero Content */}
+      {/* Heading */}
       <motion.h1
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
@@ -52,37 +54,45 @@ export const Hero = () => {
         transition={{ delay: 0.5, duration: 1 }}
         className="relative mt-4 text-lg md:text-xl text-gray-300 max-w-xl z-10"
       >
-        A passionate <span className="font-semibold text-blue-400">Full Stack Developer</span>{" "}
-        building smooth, modern, and interactive web experiences.
+        A results-driven <span className="font-semibold text-blue-400">Full Stack Developer</span>{" "}
+        building scalable web applications and real-world systems.
       </motion.p>
 
-      {/* Modern Detail Showcase */}
+      {/* Showcase Panel */}
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1, duration: 0.8 }}
         className="relative mt-8 bg-gray-800/40 backdrop-blur-md border border-gray-700 rounded-2xl p-6 flex flex-col gap-6 md:flex-row md:gap-10 items-center shadow-lg z-10"
       >
-        {/* Internship */}
+        {/* Internship Projects */}
         <div className="flex items-center gap-3 text-gray-300">
           <Briefcase className="text-blue-400" />
-          <span>Internship: Built <span className="text-blue-400">Expense Manager</span></span>
+          <span>
+            Internship Projects:{" "}
+            <span className="text-blue-400">Operation Scheduler</span>,{" "}
+            <span className="text-blue-400">SuperMall</span>
+          </span>
         </div>
 
-        {/* Personal Project */}
+        {/* Major Personal Projects */}
         <div className="flex items-center gap-3 text-gray-300">
           <Award className="text-blue-400" />
-          <span>Personal Project: <span className="text-blue-400">SkillHub</span></span>
+          <span>
+            Major Projects:{" "}
+            <span className="text-blue-400">Expense Manager</span>,{" "}
+            <span className="text-blue-400">SkillHub</span>
+          </span>
         </div>
 
         {/* Skills */}
         <div className="flex items-center gap-3 text-gray-300">
           <Code className="text-blue-400" />
           <span>
-            Skills: React • Node.js • Express • MongoDB • Tailwind
+            Stack: React • Node.js • Express • MongoDB • Firebase • Tailwind
           </span>
         </div>
       </motion.div>
     </section>
-  )
-}
+  );
+};
