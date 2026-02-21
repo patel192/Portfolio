@@ -2,19 +2,6 @@ import { motion } from "framer-motion";
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
 
-import {
-  Briefcase,
-  Award,
-  Code2,
-  Monitor,
-  Server,
-  Database,
-  GitBranch,
-  Cloud,
-  Cpu,
-  Layers,
-} from "lucide-react";
-
 export const Hero = () => {
   const particlesInit = async (engine) => {
     await loadFull(engine);
@@ -23,8 +10,8 @@ export const Hero = () => {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex flex-col justify-center items-center text-center 
-      bg-gradient-to-b from-gray-900 via-gray-950 to-black overflow-hidden px-6 py-20"
+      className="relative min-h-screen flex items-center justify-center text-center
+      bg-gradient-to-b from-slate-950 via-black to-slate-950 overflow-hidden px-6"
     >
       {/* Background particles */}
       <Particles
@@ -33,122 +20,107 @@ export const Hero = () => {
         options={{
           background: { color: "transparent" },
           fpsLimit: 60,
-          interactivity: {
-            events: { onHover: { enable: true, mode: "repulse" }, resize: true },
-            modes: { repulse: { distance: 100, duration: 0.4 } },
-          },
           particles: {
-            color: { value: "#60A5FA" },
+            color: { value: "#6366F1" },
             links: {
-              color: "#60A5FA",
-              distance: 150,
+              color: "#6366F1",
+              distance: 140,
               enable: true,
-              opacity: 0.4,
+              opacity: 0.25,
               width: 1,
             },
-            move: { enable: true, speed: 2, outModes: { default: "bounce" } },
-            number: { value: 60 },
-            opacity: { value: 0.5 },
-            shape: { type: "circle" },
-            size: { value: { min: 1, max: 5 } },
+            move: { enable: true, speed: 1.5 },
+            number: { value: 50 },
+            opacity: { value: 0.4 },
+            size: { value: { min: 1, max: 4 } },
           },
         }}
         className="absolute inset-0 z-0"
       />
 
-      {/* Title */}
-      <motion.h1
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
-        className="relative text-5xl md:text-6xl font-extrabold text-white z-10"
-      >
-        Hi, I'm <span className="text-blue-400">Muhammad Patel</span>
-      </motion.h1>
+      {/* Content */}
+      <div className="relative z-10 max-w-4xl">
 
-      <motion.p
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.4, duration: 1 }}
-        className="relative mt-5 text-lg md:text-xl text-gray-300 max-w-2xl z-10"
-      >
-        Full Stack Developer focused on building scalable, modern web applications
-        with strong backend architecture and clean UI experiences.
-      </motion.p>
+        {/* Tag */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="inline-block px-4 py-1 rounded-full 
+          bg-indigo-500/10 text-indigo-400 text-sm font-medium mb-6"
+        >
+          MERN Stack Developer • Full-Stack Engineer
+        </motion.div>
 
-      {/* Experience Highlights */}
-      <motion.div
-        initial={{ opacity: 0, y: 40 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.8, duration: 0.8 }}
-        className="relative mt-10 bg-gray-800/50 backdrop-blur border border-gray-700 
-        rounded-2xl p-6 flex flex-col md:flex-row gap-6 items-center shadow-xl z-10"
-      >
-        <div className="flex items-center gap-3 text-gray-300">
-          <Briefcase className="text-blue-400" />
-          Unified Mentor Internship Projects
-        </div>
+        {/* Title */}
+        <motion.h1
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-5xl md:text-6xl font-extrabold text-white leading-tight"
+        >
+          Hi, I'm{" "}
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-blue-400">
+            Muhammad Patel
+          </span>
+        </motion.h1>
 
-        <div className="flex items-center gap-3 text-gray-300">
-          <Award className="text-blue-400" />
-          MERN Applications & Dashboards
-        </div>
+        {/* Subtitle */}
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.4, duration: 0.8 }}
+          className="mt-6 text-lg md:text-xl text-slate-300 max-w-2xl mx-auto"
+        >
+          I build scalable full-stack web applications with clean architecture,
+          robust backend systems, and modern user experiences.
+        </motion.p>
 
-        <div className="flex items-center gap-3 text-gray-300">
-          <Code2 className="text-blue-400" />
-          Strong Focus on Architecture & UI
-        </div>
-      </motion.div>
+        {/* CTA Buttons */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.8, duration: 0.8 }}
+          className="mt-10 flex flex-col sm:flex-row gap-4 justify-center"
+        >
+          <a
+            href="#projects"
+            className="px-8 py-3 bg-indigo-600 text-white rounded-xl font-semibold
+            shadow hover:bg-indigo-700 transition"
+          >
+            View Projects
+          </a>
 
-      {/* Skills Section */}
-      <motion.div
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1.2, duration: 0.9 }}
-        className="relative mt-16 w-full max-w-6xl grid grid-cols-1 md:grid-cols-3 gap-8 z-10"
-      >
-        {/* Frontend */}
-        <div className="bg-gray-900/70 border border-gray-700 rounded-2xl p-6 text-left">
-          <h3 className="text-xl font-bold text-blue-400 mb-4 flex items-center gap-2">
-            <Monitor /> Frontend
-          </h3>
-          <ul className="space-y-3 text-gray-300 text-sm md:text-base">
-            <li className="flex gap-2 items-center"><Layers size={18}/> React.js</li>
-            <li className="flex gap-2 items-center"><Layers size={18}/> Tailwind CSS</li>
-            <li className="flex gap-2 items-center"><Layers size={18}/> HTML5 / CSS3</li>
-            <li className="flex gap-2 items-center"><Layers size={18}/> JavaScript (ES6+)</li>
-            <li className="flex gap-2 items-center"><Layers size={18}/> Responsive UI</li>
-          </ul>
-        </div>
+          <a
+            href="/resume.pdf"
+            className="px-8 py-3 border border-indigo-400 text-indigo-300 
+            rounded-xl font-semibold hover:bg-indigo-500/10 transition"
+          >
+            Download Resume
+          </a>
 
-        {/* Backend */}
-        <div className="bg-gray-900/70 border border-gray-700 rounded-2xl p-6 text-left">
-          <h3 className="text-xl font-bold text-blue-400 mb-4 flex items-center gap-2">
-            <Server /> Backend
-          </h3>
-          <ul className="space-y-3 text-gray-300 text-sm md:text-base">
-            <li className="flex gap-2 items-center"><Cpu size={18}/> Node.js</li>
-            <li className="flex gap-2 items-center"><Cpu size={18}/> Express.js</li>
-            <li className="flex gap-2 items-center"><Database size={18}/> MongoDB</li>
-            <li className="flex gap-2 items-center"><Database size={18}/> PostgreSQL</li>
-            <li className="flex gap-2 items-center"><Cpu size={18}/> REST APIs</li>
-          </ul>
-        </div>
+          <a
+            href="#contact"
+            className="px-8 py-3 border border-slate-600 text-slate-300 
+            rounded-xl font-semibold hover:bg-slate-800 transition"
+          >
+            Contact Me
+          </a>
+        </motion.div>
 
-        {/* Tools */}
-        <div className="bg-gray-900/70 border border-gray-700 rounded-2xl p-6 text-left">
-          <h3 className="text-xl font-bold text-blue-400 mb-4 flex items-center gap-2">
-            <GitBranch /> Tools
-          </h3>
-          <ul className="space-y-3 text-gray-300 text-sm md:text-base">
-            <li className="flex gap-2 items-center"><GitBranch size={18}/> Git & GitHub</li>
-            <li className="flex gap-2 items-center"><Cloud size={18}/> Vercel Deployment</li>
-            <li className="flex gap-2 items-center"><Cloud size={18}/> Firebase</li>
-            <li className="flex gap-2 items-center"><Layers size={18}/> Postman</li>
-            <li className="flex gap-2 items-center"><Layers size={18}/> Clean Architecture</li>
-          </ul>
-        </div>
-      </motion.div>
+        {/* Quick Stats */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.2 }}
+          className="mt-12 flex flex-wrap justify-center gap-8 text-slate-400 text-sm"
+        >
+          <div>✔ MERN Applications</div>
+          <div>✔ Production-Ready Projects</div>
+          <div>✔ Internship Experience</div>
+          <div>✔ Clean Architecture</div>
+        </motion.div>
+      </div>
     </section>
   );
 };
