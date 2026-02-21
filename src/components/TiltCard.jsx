@@ -1,8 +1,8 @@
-import { Github, ExternalLink } from "lucide-react";
+import { Github, ExternalLink, Star } from "lucide-react";
 import { useState } from "react";
 import { WorkModal } from "./WorkModal";
 
-export const TiltCard = ({ project, index }) => {
+export const TiltCard = ({ project }) => {
   const [rotate, setRotate] = useState({ x: 0, y: 0 });
   const [open, setOpen] = useState(false);
 
@@ -11,8 +11,8 @@ export const TiltCard = ({ project, index }) => {
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
 
-    const rotateX = (y / rect.height - 0.5) * -15;
-    const rotateY = (x / rect.width - 0.5) * 15;
+    const rotateX = (y / rect.height - 0.5) * -12;
+    const rotateY = (x / rect.width - 0.5) * 12;
 
     setRotate({ x: rotateX, y: rotateY });
   };
@@ -25,57 +25,67 @@ export const TiltCard = ({ project, index }) => {
     <>
       <div
         className="relative group rounded-2xl overflow-hidden cursor-pointer 
-                   bg-gray-800/30 border border-gray-700 transition-transform"
+        bg-white/5 backdrop-blur border border-white/10 
+        hover:border-indigo-500/40 transition"
         style={{
           transform: `perspective(1000px) rotateX(${rotate.x}deg) rotateY(${rotate.y}deg)`,
-          transition: "transform 0.2s ease-out, box-shadow 0.3s ease",
-          boxShadow:
-            rotate.x !== 0 || rotate.y !== 0
-              ? "0 20px 40px rgba(59,130,246,0.5), 0 0 25px rgba(59,130,246,0.7)"
-              : "0 5px 15px rgba(0,0,0,0.4)",
+          transition: "transform 0.25s ease-out",
         }}
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
       >
+        {/* Featured Badge */}
+        {project.featured && (
+          <div className="absolute top-4 left-4 z-20 flex items-center gap-1 
+            bg-indigo-600 text-white text-xs font-semibold px-3 py-1 rounded-full shadow">
+            <Star size={14} /> Featured
+          </div>
+        )}
+
         {/* Image */}
         <div className="overflow-hidden">
           <img
             src={project.image}
             alt={project.title}
-            className="w-full h-56 object-cover group-hover:scale-110 transition duration-500"
+            className="w-full h-56 object-cover 
+            group-hover:scale-105 transition duration-500"
           />
         </div>
 
         {/* Content */}
         <div className="p-6">
-          <h3 className="text-2xl font-semibold mb-2 group-hover:text-blue-400 transition">
+          <h3 className="text-2xl font-semibold mb-2 text-white 
+            group-hover:text-indigo-400 transition">
             {project.title}
           </h3>
-          <p className="text-gray-300 mb-4 line-clamp-2">{project.desc}</p>
+
+          <p className="text-slate-400 mb-5 line-clamp-2">
+            {project.desc}
+          </p>
 
           {/* Tech Stack */}
           <div className="flex flex-wrap gap-2 mb-6">
             {project.tech.map((t, idx) => (
               <span
                 key={idx}
-                className="px-3 py-1 bg-blue-500/20 text-blue-400 text-sm rounded-full"
+                className="px-3 py-1 text-xs rounded-full 
+                bg-indigo-500/10 text-indigo-300 border border-indigo-400/20"
               >
                 {t}
               </span>
             ))}
           </div>
 
-          {/* Buttons */}
-          <div className="flex gap-4 flex-wrap">
+          {/* Actions */}
+          <div className="flex flex-wrap gap-3">
+
             {project.frontendRepo && (
               <a
                 href={project.frontendRepo}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 px-4 py-2 rounded-lg 
-                           bg-gray-700/70 hover:bg-gray-700
-                           text-white transition 
-                           shadow-md hover:shadow-[0_0_15px_rgba(59,130,246,0.7)]"
+                bg-white/5 hover:bg-white/10 text-slate-200 transition"
               >
                 <Github size={18} /> Frontend
               </a>
@@ -87,9 +97,7 @@ export const TiltCard = ({ project, index }) => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 px-4 py-2 rounded-lg 
-                           bg-gray-700/70 hover:bg-gray-700
-                           text-white transition 
-                           shadow-md hover:shadow-[0_0_15px_rgba(59,130,246,0.7)]"
+                bg-white/5 hover:bg-white/10 text-slate-200 transition"
               >
                 <Github size={18} /> Backend
               </a>
@@ -101,29 +109,31 @@ export const TiltCard = ({ project, index }) => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 px-4 py-2 rounded-lg 
-                           bg-blue-600 hover:bg-blue-700
-                           text-white transition 
-                           shadow-md hover:shadow-[0_0_20px_rgba(59,130,246,0.9)]"
+                bg-indigo-600 hover:bg-indigo-700 text-white transition shadow"
               >
                 <ExternalLink size={18} /> Live Demo
               </a>
             )}
 
-            {/* View More (Modal) */}
+            {/* Case Study Modal */}
             <button
               onClick={() => setOpen(true)}
-              className="flex items-center gap-2 px-4 py-2 rounded-lg 
-                         bg-blue-500/20 hover:bg-blue-600/30
-                         text-blue-400 transition"
+              className="px-4 py-2 rounded-lg border border-indigo-400/40 
+              text-indigo-300 hover:bg-indigo-500/10 transition"
             >
-              View More
+              Case Study
             </button>
+
           </div>
         </div>
       </div>
 
       {/* Modal */}
-      <WorkModal open={open} onClose={() => setOpen(false)} project={project} />
+      <WorkModal
+        open={open}
+        onClose={() => setOpen(false)}
+        project={project}
+      />
     </>
   );
 };
