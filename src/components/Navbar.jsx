@@ -65,7 +65,7 @@ export const Navbar = () => {
             className="flex items-center gap-3 cursor-pointer"
             onClick={() => scrollToSection("home")}
           >
-            <img src={logo} alt="logo" className="h-10 w-auto" />
+            <img src={logo} alt="logo" className="h-15 w-auto" />
             <span className="font-bold text-slate-900 hidden sm:block">
               Muhammad Patel
             </span>
