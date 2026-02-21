@@ -1,32 +1,35 @@
 import { motion } from "framer-motion";
-import { Code, Database, Palette, Globe } from "lucide-react";
+import { Rocket, Brain, ShieldCheck, Users } from "lucide-react";
+
 export const About = () => {
-  const skills = [
+  const highlights = [
     {
-      icon: <Code size={28} />,
-      title: "Frontend",
-      desc: "React, Tailwind, JavaScript",
+      icon: <Rocket size={28} />,
+      title: "Product Builder Mindset",
+      desc: "I focus on building real-world applications that solve practical problems, not just demo projects.",
     },
     {
-      icon: <Database size={28} />,
-      title: "Backend",
-      desc: "Node.js, Express, MongoDB",
+      icon: <Brain size={28} />,
+      title: "Strong Problem Solving",
+      desc: "Comfortable designing systems, debugging complex issues, and optimizing performance.",
     },
     {
-      icon: <Palette size={28} />,
-      title: "UI/UX",
-      desc: "Clean, Modern, Responsive Design",
+      icon: <ShieldCheck size={28} />,
+      title: "Clean Architecture",
+      desc: "Emphasis on maintainable code, scalable backend structure, and best practices.",
     },
     {
-      icon: <Globe size={28} />,
-      title: "Deployment",
-      desc: "Vercel, Netlify, Render",
+      icon: <Users size={28} />,
+      title: "Team Collaboration",
+      desc: "Experience working on guided projects and collaborating with mentors during internship.",
     },
   ];
+
   return (
     <section
       id="about"
-      className="min-h-screen flex flex-col justify-center items-center px-6 bg-gradient-to-b from-black via-gray-950 to-gray-900 text-white"
+      className="min-h-screen flex flex-col justify-center items-center px-6 
+      bg-gradient-to-b from-slate-950 via-black to-slate-950 text-white"
     >
       {/* Title */}
       <motion.h2
@@ -34,7 +37,7 @@ export const About = () => {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7 }}
         viewport={{ once: true }}
-        className="text-4xl font-bold text-blue-400 mb-6"
+        className="text-4xl md:text-5xl font-extrabold text-white mb-6"
       >
         About Me
       </motion.h2>
@@ -45,30 +48,41 @@ export const About = () => {
         whileInView={{ opacity: 1 }}
         transition={{ delay: 0.3, duration: 0.7 }}
         viewport={{ once: true }}
-        className="max-w-2xl text-center text-gray-300 mb-12"
+        className="max-w-3xl text-center text-slate-300 mb-14 text-lg leading-relaxed"
       >
-        I’m a passionate developer who loves building{" "}
-        <span className="text-blue-400">smooth, interactive web apps</span>.
-        Always eager to learn new technologies and deliver
-        <span className="text-blue-400"> high-quality work</span>.
+        I'm a <span className="text-indigo-400 font-semibold">Full-Stack Developer</span> specializing in the MERN stack,
+        passionate about building scalable web applications with strong backend
+        architecture and clean user experiences.
+
+        <br /><br />
+
+        I enjoy turning complex ideas into reliable products — from system design
+        and API development to intuitive front-end interfaces. My goal is to
+        contribute to impactful software while continuously improving as an engineer.
       </motion.p>
 
-      {/* Skills */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl">
-        {skills.map((skill, i) => (
+      {/* Highlights */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 max-w-6xl">
+        {highlights.map((item, i) => (
           <motion.div
             key={i}
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: i * 0.2, duration: 0.6 }}
+            transition={{ delay: i * 0.15, duration: 0.6 }}
             viewport={{ once: true }}
-            className="p-6 bg-gray-800/60 rounded-2xl shadow-lg hover:shadow-blue-500/40 border border-gray-700 hover:border-blue-400 transition cursor-pointer"
+            className="p-7 bg-white/5 backdrop-blur border border-white/10 
+            rounded-2xl shadow hover:border-indigo-500/40 hover:shadow-indigo-500/20 
+            transition"
           >
-            <div className="text-blue-400 mb-3">{skill.icon}</div>
-            <h3 className="text-xl font-semibold text-white mb-2">
-              {skill.title}
+            <div className="text-indigo-400 mb-4">{item.icon}</div>
+
+            <h3 className="text-lg font-semibold text-white mb-2">
+              {item.title}
             </h3>
-            <p className="text-gray-400">{skill.desc}</p>
+
+            <p className="text-sm text-slate-400 leading-relaxed">
+              {item.desc}
+            </p>
           </motion.div>
         ))}
       </div>
