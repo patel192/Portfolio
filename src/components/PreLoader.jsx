@@ -5,7 +5,7 @@ export const PreLoader = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 3000);
+    const timer = setTimeout(() => setLoading(false), 2200);
     return () => clearTimeout(timer);
   }, []);
 
@@ -15,30 +15,42 @@ export const PreLoader = () => {
         <motion.div
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 0.8 }}
-          className="fixed inset-0 bg-black flex flex-col items-center justify-center z-50"
+          transition={{ duration: 0.6 }}
+          className="fixed inset-0 bg-slate-950 flex flex-col items-center justify-center z-50"
         >
-          {/* Loader: bouncing dots */}
-          <div className="flex space-x-3">
-            {[0, 1, 2].map((i) => (
-              <motion.span
-                key={i}
-                className="w-4 h-4 bg-blue-500 rounded-full"
-                animate={{ y: [0, -12, 0] }}
-                transition={{
-                  repeat: Infinity,
-                  duration: 0.6,
-                  delay: i * 0.2,
-                  ease: "easeInOut",
-                }}
-              />
-            ))}
+          {/* Brand / Name */}
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-3xl md:text-4xl font-extrabold text-white tracking-wide"
+          >
+            Muhammad Patel
+          </motion.h1>
+
+          <p className="mt-2 text-slate-400 text-sm">
+            MERN Stack Developer
+          </p>
+
+          {/* Progress Bar */}
+          <div className="mt-10 w-64 h-1 bg-slate-800 rounded overflow-hidden">
+            <motion.div
+              className="h-full bg-gradient-to-r from-blue-500 to-indigo-500"
+              initial={{ width: 0 }}
+              animate={{ width: "100%" }}
+              transition={{ duration: 1.8, ease: "easeInOut" }}
+            />
           </div>
 
           {/* Loading Text */}
-          <p className="mt-6 text-lg font-medium text-gray-300 tracking-widest">
-            Loading...
-          </p>
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: [0, 1, 0.6, 1] }}
+            transition={{ duration: 1.8, repeat: Infinity }}
+            className="mt-4 text-xs text-slate-500 tracking-widest"
+          >
+            INITIALIZING PORTFOLIO
+          </motion.p>
         </motion.div>
       )}
     </AnimatePresence>
