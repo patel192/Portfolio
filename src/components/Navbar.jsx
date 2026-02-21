@@ -1,7 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
-
+import logo from "../../public/logo.png"
 export const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -65,7 +65,7 @@ export const Navbar = () => {
             className="flex items-center gap-3 cursor-pointer"
             onClick={() => scrollToSection("home")}
           >
-            <img src="/src/assets/logo.png" alt="logo" className="h-10 w-auto" />
+            <img src={logo} alt="logo" className="h-10 w-auto" />
             <span className="font-bold text-slate-900 hidden sm:block">
               Muhammad Patel
             </span>
