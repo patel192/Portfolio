@@ -6,6 +6,7 @@ import { Hero } from "./components/Hero";
 import { Navbar } from "./components/Navbar";
 import { Projects } from "./components/Projects";
 import { Toaster } from "react-hot-toast";
+import { Skills } from "./components/Skills";
 import { ScrollToTop } from "./components/ScrollToTop";
 import { useState, useEffect } from "react";
 import { PreLoader } from "./components/PreLoader";
@@ -42,6 +43,7 @@ function App() {
           <Navbar />
           <Hero />
           <About />
+          <Skills/>
           <Projects />
           <Contact />
           <Footer />
