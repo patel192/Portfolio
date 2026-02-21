@@ -1,7 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
-import logo from "/digital_tech_book_logo_design_template-removebg-preview.png";
 
 export const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -66,7 +65,7 @@ export const Navbar = () => {
             className="flex items-center gap-3 cursor-pointer"
             onClick={() => scrollToSection("home")}
           >
-            <img src={logo} alt="logo" className="h-10 w-auto" />
+            <img src="/src/assets/logo.png" alt="logo" className="h-10 w-auto" />
             <span className="font-bold text-slate-900 hidden sm:block">
               Muhammad Patel
             </span>
