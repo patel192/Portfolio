@@ -61,8 +61,7 @@ export const Projects = () => {
   return (
     <section
       id="projects"
-      className="min-h-screen flex flex-col justify-center items-center px-6 py-24
-      bg-gradient-to-b from-slate-950 via-black to-slate-950 text-white"
+      className="min-h-screen flex flex-col justify-center items-center px-6 py-24 text-white"
     >
       {/* Title */}
       <motion.h2

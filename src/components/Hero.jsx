@@ -10,8 +10,7 @@ export const Hero = () => {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center text-center
-      bg-gradient-to-b from-slate-950 via-black to-slate-950 overflow-hidden px-6"
+      className="relative min-h-screen flex items-center justify-center text-center overflow-hidden px-6"
     >
       {/* Background particles */}
       <Particles

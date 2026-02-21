@@ -37,7 +37,7 @@ export const Skills = () => {
   return (
     <section
       id="skills"
-      className="py-24 bg-gradient-to-b from-black via-gray-950 to-gray-900 text-white overflow-hidden"
+      className="py-24 text-white overflow-hidden"
     >
       <div className="max-w-6xl mx-auto px-6 text-center">
         {/* Title */}

@@ -28,8 +28,7 @@ export const About = () => {
   return (
     <section
       id="about"
-      className="min-h-screen flex flex-col justify-center items-center px-6 
-      bg-gradient-to-b from-slate-950 via-black to-slate-950 text-white"
+      className="min-h-screen flex flex-col justify-center items-center px-6 text-white"
     >
       {/* Title */}
       <motion.h2

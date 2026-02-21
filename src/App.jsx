@@ -19,23 +19,23 @@ function App() {
     return () => clearTimeout(timer);
   }, []);
   return (
-    <>
-    <Toaster
-      position="top-right"
-      toastOptions={{
-        duration: 3000,
-        style: {
-          background: "#1f2937", // dark gray
-          color: "#fff",
-          borderRadius: "10px",
-          padding: "12px 16px",
-          fontSize: "14px",
-        },
-      }}
-      containerStyle={{
-        top: 80, // leaves space below navbar
-      }}
-    />
+    <div className="min-h-screen bg-gradient-to-b from-black via-gray-950 to-black text-white">
+      <Toaster
+        position="top-right"
+        toastOptions={{
+          duration: 3000,
+          style: {
+            background: "#1f2937", // dark gray
+            color: "#fff",
+            borderRadius: "10px",
+            padding: "12px 16px",
+            fontSize: "14px",
+          },
+        }}
+        containerStyle={{
+          top: 80, // leaves space below navbar
+        }}
+      />
       {loading ? (
         <PreLoader />
       ) : (
@@ -43,14 +43,14 @@ function App() {
           <Navbar />
           <Hero />
           <About />
-          <Skills/>
+          <Skills />
           <Projects />
           <Contact />
           <Footer />
           <ScrollToTop />
         </>
       )}
-    </>
+    </div>
   );
 }
 
