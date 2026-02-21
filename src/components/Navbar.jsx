@@ -9,10 +9,10 @@ export const Navbar = () => {
 
   const links = [
     { name: "Home", id: "home" },
+    { name: "About", id: "about" },
     { name: "Projects", id: "projects" },
     { name: "Skills", id: "skills" },
     { name: "Experience", id: "experience" },
-    { name: "About", id: "about" },
     { name: "Contact", id: "contact" },
   ];
 
