@@ -13,6 +13,7 @@ import {
   SiGithub,
   SiVercel,
   SiPostman,
+  SiGithubactions,
 } from "react-icons/si";
 
 export const Skills = () => {
@@ -25,9 +26,9 @@ export const Skills = () => {
     { icon: <SiNodedotjs />, name: "Node.js" },
     { icon: <SiExpress />, name: "Express" },
     { icon: <SiMongodb />, name: "MongoDB" },
-    { icon: <SiPostgresql />, name: "PostgreSQL" },
     { icon: <SiFirebase />, name: "Firebase" },
     { icon: <SiGit />, name: "Git" },
+    { icon: <SiGithubactions />, name: "Github Actions" },
     { icon: <SiGithub />, name: "GitHub" },
     { icon: <SiVercel />, name: "Vercel" },
     { icon: <SiPostman />, name: "Postman" },
@@ -39,7 +40,6 @@ export const Skills = () => {
       className="py-24 bg-gradient-to-b from-black via-gray-950 to-gray-900 text-white overflow-hidden"
     >
       <div className="max-w-6xl mx-auto px-6 text-center">
-
         {/* Title */}
         <h2 className="text-4xl font-bold text-indigo-400 mb-6">
           Skills & Tech Stack
@@ -50,29 +50,20 @@ export const Skills = () => {
           applications from frontend to backend.
         </p>
 
-        {/* Infinite Slider */}
         <div className="relative w-full overflow-hidden">
-
-          <div className="flex gap-10 animate-scroll whitespace-nowrap">
-
-            {/* Duplicate list for seamless loop */}
+          <div className="flex w-max gap-10 animate-scroll">
             {[...skills, ...skills].map((skill, i) => (
               <div
                 key={i}
-                className="flex flex-col items-center gap-3 
-                bg-white/5 border border-white/10 backdrop-blur 
-                px-6 py-4 rounded-xl min-w-[120px]
-                hover:border-indigo-400 hover:scale-105 transition"
+                className="flex-shrink-0 flex flex-col items-center gap-3 
+        bg-white/5 border border-white/10 backdrop-blur 
+        px-6 py-4 rounded-xl min-w-[120px]
+        hover:border-indigo-400 hover:scale-105 transition"
               >
-                <div className="text-3xl text-indigo-400">
-                  {skill.icon}
-                </div>
-                <span className="text-sm text-slate-300">
-                  {skill.name}
-                </span>
+                <div className="text-3xl text-indigo-400">{skill.icon}</div>
+                <span className="text-sm text-slate-300">{skill.name}</span>
               </div>
             ))}
-
           </div>
         </div>
       </div>
@@ -80,15 +71,15 @@ export const Skills = () => {
       {/* Animation */}
       <style>
         {`
-          @keyframes scroll {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-          }
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
 
-          .animate-scroll {
-            animation: scroll 25s linear infinite;
-          }
-        `}
+.animate-scroll {
+  animation: scroll 22s linear infinite;
+}
+`}
       </style>
     </section>
   );
