@@ -1,85 +1,95 @@
 import { motion } from "framer-motion";
-import { Github, Linkedin, Mail } from "lucide-react";
+import { Github, Linkedin, Mail, FileText } from "lucide-react";
 
 export const Footer = () => {
-return ( <footer className="relative text-gray-400 pt-24 pb-12">
+  return (
+    <footer className="relative pt-24 pb-12 text-gray-400">
 
-
-  {/* Soft Top Glow */}
-  <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-blue-500/10 to-transparent pointer-events-none" />
-
-  {/* Content */}
-  <motion.div
-    initial={{ opacity: 0, y: 40 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.7 }}
-    viewport={{ once: true }}
-    className="relative max-w-6xl mx-auto px-6 text-center flex flex-col items-center"
-  >
-    {/* Name / Branding */}
-    <h2 className="text-3xl font-extrabold text-white">
-      Muhammad Patel
-    </h2>
-
-    <p className="mt-2 text-blue-400 font-medium">
-      Full-Stack MERN Developer
-    </p>
-
-    {/* Tagline */}
-    <p className="mt-4 max-w-xl text-gray-400 leading-relaxed">
-      I build scalable web applications with clean architecture,
-      modern UI, and production-ready backend systems.
-    </p>
-
-    {/* Availability Badge */}
-    <div className="mt-6 px-4 py-2 rounded-full bg-green-500/10 border border-green-500/30 text-green-400 text-sm">
-      ● Open to internships & full-time opportunities
-    </div>
-
-    {/* Social Links */}
-    <div className="flex gap-5 mt-8">
-      <a
-        href="mailto:patelmuhammad192@gmail.com"
-        className="p-3 rounded-full bg-gray-800 hover:bg-blue-600 transition"
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7 }}
+        viewport={{ once: true }}
+        className="max-w-6xl mx-auto px-6 text-center flex flex-col items-center"
       >
-        <Mail size={22} />
-      </a>
+        {/* Closing Line */}
+        <h2 className="text-2xl md:text-3xl font-bold text-white">
+          Let’s build something great together
+        </h2>
 
-      <a
-        href="https://github.com/patel192"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="p-3 rounded-full bg-gray-800 hover:bg-blue-600 transition"
-      >
-        <Github size={22} />
-      </a>
+        <p className="mt-4 max-w-xl text-gray-400">
+          Open to internships, freelance work, and full-time opportunities.
+          Feel free to reach out if you have a project or role in mind.
+        </p>
 
-      <a
-        href="https://linkedin.com/in/yourusername"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="p-3 rounded-full bg-gray-800 hover:bg-blue-600 transition"
-      >
-        <Linkedin size={22} />
-      </a>
-    </div>
+        {/* Contact Email */}
+        <p className="mt-4 text-blue-400 font-medium">
+          patelmuhammad192@gmail.com
+        </p>
 
-    {/* Divider */}
-    <div className="w-full h-px bg-gray-800 my-10" />
+        {/* Buttons */}
+        <div className="flex flex-wrap justify-center gap-4 mt-8">
 
-    {/* Bottom */}
-    <div className="flex flex-col md:flex-row items-center justify-between w-full text-sm text-gray-500 gap-4">
-      <p>
-        © {new Date().getFullYear()} Muhammad Patel. All rights reserved.
-      </p>
+          <a
+            href="mailto:patelmuhammad192@gmail.com"
+            className="flex items-center gap-2 px-5 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-semibold transition"
+          >
+            <Mail size={18} /> Contact Me
+          </a>
 
-      <p className="text-gray-600">
-        Built with React • Tailwind • Framer Motion
-      </p>
-    </div>
-  </motion.div>
-</footer>
+          <a
+            href="/Muhammad__Fullstack_developer_2026.pdf"
+            target="_blank"
+            className="flex items-center gap-2 px-5 py-3 bg-gray-800 hover:bg-gray-700 text-white rounded-xl font-semibold transition"
+          >
+            <FileText size={18} /> View Resume
+          </a>
 
+        </div>
 
-);
+        {/* Social Links */}
+        <div className="flex gap-5 mt-10">
+
+          <a
+            href="https://github.com/patel192"
+            target="_blank"
+            className="p-3 rounded-full bg-gray-800 hover:bg-blue-600 transition"
+          >
+            <Github size={22} />
+          </a>
+
+          <a
+            href="www.linkedin.com/in/patel-muhammad-658952355"
+            target="_blank"
+            className="p-3 rounded-full bg-gray-800 hover:bg-blue-600 transition"
+          >
+            <Linkedin size={22} />
+          </a>
+
+          <a
+            href="mailto:patelmuhammad192@gmail.com"
+            className="p-3 rounded-full bg-gray-800 hover:bg-blue-600 transition"
+          >
+            <Mail size={22} />
+          </a>
+
+        </div>
+
+        {/* Divider */}
+        <div className="w-full h-px bg-gray-800 my-10" />
+
+        {/* Bottom */}
+        <div className="flex flex-col md:flex-row items-center justify-between w-full text-sm text-gray-500 gap-4">
+          <p>
+            © {new Date().getFullYear()} Muhammad Patel. All rights reserved.
+          </p>
+
+          <p className="text-gray-600">
+            Built with React • Tailwind • Framer Motion
+          </p>
+        </div>
+
+      </motion.div>
+    </footer>
+  );
 };

@@ -10,6 +10,7 @@ import { Skills } from "./components/Skills";
 import { ScrollToTop } from "./components/ScrollToTop";
 import { useState, useEffect } from "react";
 import { PreLoader } from "./components/PreLoader";
+import { Experience } from "./components/Experience";
 function App() {
   const [loading, setLoading] = useState(true);
 
@@ -43,8 +44,9 @@ function App() {
           <Navbar />
           <Hero />
           <About />
-          <Skills />
           <Projects />
+          <Skills />
+          <Experience/>
           <Contact />
           <Footer />
           <ScrollToTop />

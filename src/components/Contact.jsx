@@ -61,27 +61,6 @@ export const Contact = () => {
             <Mail className="text-blue-400" />
             <span className="text-gray-300">patelmuhammad192@gmail.com</span>
           </div>
-
-          {/* Social Links */}
-          <div className="flex gap-4">
-            <a
-              href="https://www.linkedin.com/in/patel-muhammad-658952355?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-3 bg-gray-800 rounded-full hover:bg-blue-600 transition"
-            >
-              <Github size={22} />
-            </a>
-
-            <a
-              href="https://www.linkedin.com/in/patel-muhammad-658952355?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-3 bg-gray-800 rounded-full hover:bg-blue-600 transition"
-            >
-              <Linkedin size={22} />
-            </a>
-          </div>
         </motion.div>
 
         {/* RIGHT — FORM */}

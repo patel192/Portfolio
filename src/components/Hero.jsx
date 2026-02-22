@@ -91,7 +91,8 @@ export const Hero = () => {
           </a>
 
           <a
-            href="/resume.pdf"
+            href="/Muhammad__Fullstack_developer_2026.pdf"
+            target="_blank"
             className="px-8 py-3 border border-indigo-400 text-indigo-300 
             rounded-xl font-semibold hover:bg-indigo-500/10 transition"
           >

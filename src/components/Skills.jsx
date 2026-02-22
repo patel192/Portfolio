@@ -28,7 +28,7 @@ export const Skills = () => {
     { icon: <SiMongodb />, name: "MongoDB" },
     { icon: <SiFirebase />, name: "Firebase" },
     { icon: <SiGit />, name: "Git" },
-    { icon: <SiGithubactions />, name: "Github Actions" },
+    { icon: <SiGithubactions />, name: "CI/CD (Github Actions)" },
     { icon: <SiGithub />, name: "GitHub" },
     { icon: <SiVercel />, name: "Vercel" },
     { icon: <SiPostman />, name: "Postman" },

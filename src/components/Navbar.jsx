@@ -1,7 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
-import logo from "../../public/logo.png"
+import logo from "/logo.png"
 export const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -103,7 +103,7 @@ export const Navbar = () => {
           {/* CTA Button */}
           <div className="hidden md:block">
             <a
-              href="/resume.pdf"
+              href="/Muhammad__Fullstack_developer_2026.pdf"
               target="_blank"
               className="px-5 py-2 rounded-lg bg-indigo-600 text-white text-sm font-semibold shadow hover:bg-indigo-700 transition"
             >
@@ -162,7 +162,7 @@ export const Navbar = () => {
               </div>
 
               <a
-                href="/resume.pdf"
+                href="/Muhammad__Fullstack_developer_2026.pdf"
                 target="_blank"
                 className="mt-auto px-4 py-3 bg-indigo-600 text-white rounded-lg text-center font-semibold"
               >
