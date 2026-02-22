@@ -77,7 +77,7 @@ export const Skills = () => {
 }
 
 .animate-scroll {
-  animation: scroll 22s linear infinite;
+  animation: scroll 35s linear infinite;
 }
 `}
       </style>
