@@ -114,16 +114,6 @@ export const TiltCard = ({ project }) => {
                 <ExternalLink size={18} /> Live Demo
               </a>
             )}
-
-            {/* Case Study Modal */}
-            <button
-              onClick={() => setOpen(true)}
-              className="px-4 py-2 rounded-lg border border-indigo-400/40 
-              text-indigo-300 hover:bg-indigo-500/10 transition"
-            >
-              Case Study
-            </button>
-
           </div>
         </div>
       </div>
