@@ -10,7 +10,7 @@ export const Hero = () => {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center text-center overflow-hidden px-6"
+      className="relative min-h-screen flex items-center justify-center text-center overflow-hidden px-6 pt-20"
     >
       {/* Background particles */}
       <Particles
@@ -29,7 +29,7 @@ export const Hero = () => {
               width: 1,
             },
             move: { enable: true, speed: 1.5 },
-            number: { value: 50 },
+            number: { value: 42 },
             opacity: { value: 0.4 },
             size: { value: { min: 1, max: 4 } },
           },
@@ -38,15 +38,14 @@ export const Hero = () => {
       />
 
       {/* Content */}
-      <div className="relative z-10 max-w-4xl">
+      <div className="relative z-10 max-w-4xl rounded-3xl border border-white/10 bg-slate-900/35 px-6 py-10 backdrop-blur-sm md:px-10">
 
         {/* Tag */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="inline-block px-4 py-1 rounded-full 
-          bg-indigo-500/10 text-indigo-400 text-sm font-medium mb-6"
+          className="inline-block rounded-full border border-indigo-400/30 bg-indigo-500/10 px-4 py-1 text-sm font-medium text-indigo-300 mb-6"
         >
           MERN Stack Developer • Full-Stack Engineer
         </motion.div>
@@ -56,7 +55,7 @@ export const Hero = () => {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-5xl md:text-6xl font-extrabold text-white leading-tight"
+          className="text-4xl md:text-6xl font-extrabold text-white leading-tight"
         >
           Hi, I'm{" "}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-blue-400">
@@ -69,7 +68,7 @@ export const Hero = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.4, duration: 0.8 }}
-          className="mt-6 text-lg md:text-xl text-slate-300 max-w-2xl mx-auto"
+          className="mt-6 text-base md:text-xl text-slate-300 max-w-2xl mx-auto"
         >
           I build scalable full-stack web applications with clean architecture,
           robust backend systems, and modern user experiences.
@@ -84,8 +83,7 @@ export const Hero = () => {
         >
           <a
             href="#projects"
-            className="px-8 py-3 bg-indigo-600 text-white rounded-xl font-semibold
-            shadow hover:bg-indigo-700 transition"
+            className="px-8 py-3 rounded-xl bg-gradient-to-r from-indigo-600 to-cyan-600 text-white font-semibold shadow-lg shadow-indigo-950/40 hover:opacity-90 transition"
           >
             View Projects
           </a>
@@ -93,15 +91,15 @@ export const Hero = () => {
           <a
             href="/Muhammad__Fullstack_developer_2026.pdf"
             target="_blank"
-            className="px-8 py-3 border border-indigo-400 text-indigo-300 
-            rounded-xl font-semibold hover:bg-indigo-500/10 transition"
+            rel="noopener noreferrer"
+            className="px-8 py-3 rounded-xl border border-indigo-400/40 text-indigo-200 font-semibold hover:bg-indigo-500/10 transition"
           >
             Download Resume
           </a>
 
           <a
             href="#contact"
-            className="px-8 py-3 border border-slate-600 text-slate-300 
+            className="px-8 py-3 border border-slate-600 text-slate-300
             rounded-xl font-semibold hover:bg-slate-800 transition"
           >
             Contact Me
@@ -113,7 +111,7 @@ export const Hero = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.2 }}
-          className="mt-12 flex flex-wrap justify-center gap-8 text-slate-400 text-sm"
+          className="mt-12 flex flex-wrap justify-center gap-6 text-slate-400 text-sm"
         >
           <div>✔ MERN Applications</div>
           <div>✔ Production-Ready Projects</div>

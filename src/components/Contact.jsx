@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Mail, Github, Linkedin } from "lucide-react";
+import { Mail } from "lucide-react";
 import { useRef, useState } from "react";
 import emailjs from "emailjs-com";
 import toast from "react-hot-toast";
@@ -35,7 +35,7 @@ export const Contact = () => {
   return (
     <section
       id="contact"
-      className="min-h-screen flex items-center px-6 py-2 text-white"
+      className="min-h-screen flex items-center px-6 py-12 text-white"
     >
       {" "}
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center w-full">
@@ -46,7 +46,7 @@ export const Contact = () => {
           transition={{ duration: 0.7 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl font-extrabold text-blue-400 mb-6">
+          <h2 className="text-4xl font-extrabold text-indigo-300 mb-6">
             Let’s Work Together
           </h2>
 
@@ -58,7 +58,7 @@ export const Contact = () => {
 
           {/* Email */}
           <div className="flex items-center gap-3 mb-6">
-            <Mail className="text-blue-400" />
+            <Mail className="text-indigo-300" />
             <span className="text-gray-300">patelmuhammad192@gmail.com</span>
           </div>
         </motion.div>
@@ -71,7 +71,7 @@ export const Contact = () => {
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.7 }}
           viewport={{ once: true }}
-          className="bg-white/5 backdrop-blur border border-white/10
+          className="bg-slate-900/55 backdrop-blur border border-white/10
                  rounded-2xl p-8 shadow-xl flex flex-col gap-5"
         >
           <h3 className="text-2xl font-semibold text-white mb-2">
@@ -84,7 +84,7 @@ export const Contact = () => {
             placeholder="Your Name"
             required
             className="p-3 rounded-lg bg-gray-900 border border-gray-700
-                   focus:border-blue-500 outline-none"
+                   focus:border-indigo-400 outline-none"
           />
 
           <input
@@ -93,7 +93,7 @@ export const Contact = () => {
             placeholder="Your Email"
             required
             className="p-3 rounded-lg bg-gray-900 border border-gray-700
-                   focus:border-blue-500 outline-none"
+                   focus:border-indigo-400 outline-none"
           />
 
           <textarea
@@ -102,13 +102,13 @@ export const Contact = () => {
             placeholder="Your Message"
             required
             className="p-3 rounded-lg bg-gray-900 border border-gray-700
-                   focus:border-blue-500 outline-none"
+                   focus:border-indigo-400 outline-none"
           />
 
           <button
             type="submit"
             disabled={loading}
-            className="mt-2 px-6 py-3 bg-blue-600 hover:bg-blue-700
+            className="mt-2 px-6 py-3 bg-gradient-to-r from-indigo-600 to-cyan-600 hover:opacity-90
                    rounded-lg font-semibold transition
                    disabled:opacity-50"
           >

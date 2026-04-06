@@ -42,7 +42,7 @@ export const Experience = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
           viewport={{ once: true }}
-          className="text-4xl font-bold text-center text-indigo-400 mb-16"
+          className="text-4xl font-bold text-center text-indigo-300 mb-16"
         >
           Experience
         </motion.h2>
@@ -63,7 +63,7 @@ export const Experience = () => {
               <div className="absolute left-[-9px] top-2 w-4 h-4 bg-indigo-500 rounded-full shadow-lg" />
 
               {/* Card */}
-              <div className="bg-white/5 backdrop-blur border border-white/10 rounded-2xl p-6 hover:border-indigo-400 transition shadow-lg">
+              <div className="bg-slate-900/55 backdrop-blur border border-white/10 rounded-2xl p-6 hover:border-indigo-400 transition shadow-lg">
 
                 {/* Header */}
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2 mb-4">

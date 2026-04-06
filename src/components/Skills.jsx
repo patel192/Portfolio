@@ -41,7 +41,7 @@ export const Skills = () => {
     >
       <div className="max-w-6xl mx-auto px-6 text-center">
         {/* Title */}
-        <h2 className="text-4xl font-bold text-indigo-400 mb-6">
+        <h2 className="text-4xl font-bold text-indigo-300 mb-6">
           Skills & Tech Stack
         </h2>
 
@@ -56,9 +56,9 @@ export const Skills = () => {
               <div
                 key={i}
                 className="flex-shrink-0 flex flex-col items-center gap-3 
-        bg-white/5 border border-white/10 backdrop-blur 
+        bg-slate-900/55 border border-white/10 backdrop-blur
         px-6 py-4 rounded-xl min-w-[120px]
-        hover:border-indigo-400 hover:scale-105 transition"
+        hover:border-indigo-400 hover:-translate-y-1 transition"
               >
                 <div className="text-3xl text-indigo-400">{skill.icon}</div>
                 <span className="text-sm text-slate-300">{skill.name}</span>

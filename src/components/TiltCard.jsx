@@ -25,8 +25,8 @@ export const TiltCard = ({ project }) => {
     <>
       <div
         className="relative group rounded-2xl overflow-hidden cursor-pointer 
-        bg-white/5 backdrop-blur border border-white/10 
-        hover:border-indigo-500/40 transition"
+        bg-slate-900/55 backdrop-blur border border-white/10
+        hover:border-indigo-500/40 hover:shadow-lg hover:shadow-indigo-950/30 transition"
         style={{
           transform: `perspective(1000px) rotateX(${rotate.x}deg) rotateY(${rotate.y}deg)`,
           transition: "transform 0.25s ease-out",
@@ -47,7 +47,7 @@ export const TiltCard = ({ project }) => {
           <img
             src={project.image}
             alt={project.title}
-            className="w-full h-56 object-cover 
+            className="w-full h-56 object-cover
             group-hover:scale-105 transition duration-500"
           />
         </div>
@@ -84,7 +84,7 @@ export const TiltCard = ({ project }) => {
                 href={project.frontendRepo}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 px-4 py-2 rounded-lg 
+                className="flex items-center gap-2 px-4 py-2 rounded-lg
                 bg-white/5 hover:bg-white/10 text-slate-200 transition"
               >
                 <Github size={18} /> Frontend
@@ -96,7 +96,7 @@ export const TiltCard = ({ project }) => {
                 href={project.backendRepo}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 px-4 py-2 rounded-lg 
+                className="flex items-center gap-2 px-4 py-2 rounded-lg
                 bg-white/5 hover:bg-white/10 text-slate-200 transition"
               >
                 <Github size={18} /> Backend
@@ -108,8 +108,8 @@ export const TiltCard = ({ project }) => {
                 href={project.demo}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 px-4 py-2 rounded-lg 
-                bg-indigo-600 hover:bg-indigo-700 text-white transition shadow"
+                className="flex items-center gap-2 px-4 py-2 rounded-lg
+                bg-gradient-to-r from-indigo-600 to-cyan-600 text-white transition hover:opacity-90 shadow-lg shadow-indigo-950/30"
               >
                 <ExternalLink size={18} /> Live Demo
               </a>

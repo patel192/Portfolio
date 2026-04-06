@@ -87,7 +87,7 @@ export const Projects = () => {
       </motion.p>
 
       {/* Projects Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-6xl w-full">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl w-full">
         {projects.map((project, i) => (
           <TiltCard key={project.id} project={project} index={i} />
         ))}
@@ -102,8 +102,8 @@ export const Projects = () => {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.6 }}
         viewport={{ once: true }}
-        className="mt-14 px-8 py-3 border border-indigo-400 text-indigo-300 
-        rounded-xl font-semibold hover:bg-indigo-500/10 transition"
+        className="mt-14 px-8 py-3 rounded-xl border border-indigo-400/40 text-indigo-200
+        font-semibold hover:bg-indigo-500/10 transition"
       >
         View More on GitHub →
       </motion.a>

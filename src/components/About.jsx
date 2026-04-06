@@ -28,7 +28,7 @@ export const About = () => {
   return (
     <section
       id="about"
-      className="min-h-screen flex flex-col justify-center items-center px-6 text-white"
+      className="min-h-screen flex flex-col justify-center items-center px-6 py-24 text-white"
     >
       {/* Title */}
       <motion.h2
@@ -61,7 +61,7 @@ export const About = () => {
       </motion.p>
 
       {/* Highlights */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 max-w-6xl">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 max-w-6xl">
         {highlights.map((item, i) => (
           <motion.div
             key={i}
@@ -69,8 +69,8 @@ export const About = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: i * 0.15, duration: 0.6 }}
             viewport={{ once: true }}
-            className="p-7 bg-white/5 backdrop-blur border border-white/10 
-            rounded-2xl shadow hover:border-indigo-500/40 hover:shadow-indigo-500/20 
+            className="p-7 bg-slate-900/50 backdrop-blur border border-white/10
+            rounded-2xl shadow-lg hover:border-indigo-500/40 hover:shadow-indigo-500/20
             transition"
           >
             <div className="text-indigo-400 mb-4">{item.icon}</div>

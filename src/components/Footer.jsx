@@ -23,7 +23,7 @@ export const Footer = () => {
         </p>
 
         {/* Contact Email */}
-        <p className="mt-4 text-blue-400 font-medium">
+        <p className="mt-4 text-indigo-300 font-medium">
           patelmuhammad192@gmail.com
         </p>
 
@@ -32,7 +32,7 @@ export const Footer = () => {
 
           <a
             href="mailto:patelmuhammad192@gmail.com"
-            className="flex items-center gap-2 px-5 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-semibold transition"
+            className="flex items-center gap-2 px-5 py-3 bg-gradient-to-r from-indigo-600 to-cyan-600 text-white rounded-xl font-semibold transition hover:opacity-90"
           >
             <Mail size={18} /> Contact Me
           </a>
@@ -40,7 +40,7 @@ export const Footer = () => {
           <a
             href="/Muhammad__Fullstack_developer_2026.pdf"
             target="_blank"
-            className="flex items-center gap-2 px-5 py-3 bg-gray-800 hover:bg-gray-700 text-white rounded-xl font-semibold transition"
+            className="flex items-center gap-2 px-5 py-3 bg-slate-800 hover:bg-slate-700 text-white rounded-xl font-semibold transition"
           >
             <FileText size={18} /> View Resume
           </a>
@@ -53,22 +53,23 @@ export const Footer = () => {
           <a
             href="https://github.com/patel192"
             target="_blank"
-            className="p-3 rounded-full bg-gray-800 hover:bg-blue-600 transition"
+            className="p-3 rounded-full bg-slate-800 hover:bg-indigo-600 transition"
           >
             <Github size={22} />
           </a>
 
           <a
-            href="www.linkedin.com/in/patel-muhammad-658952355"
+            href="https://www.linkedin.com/in/patel-muhammad-658952355"
             target="_blank"
-            className="p-3 rounded-full bg-gray-800 hover:bg-blue-600 transition"
+            rel="noopener noreferrer"
+            className="p-3 rounded-full bg-slate-800 hover:bg-indigo-600 transition"
           >
             <Linkedin size={22} />
           </a>
 
           <a
             href="mailto:patelmuhammad192@gmail.com"
-            className="p-3 rounded-full bg-gray-800 hover:bg-blue-600 transition"
+            className="p-3 rounded-full bg-slate-800 hover:bg-indigo-600 transition"
           >
             <Mail size={22} />
           </a>
